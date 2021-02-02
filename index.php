@@ -1,4 +1,4 @@
-<?php session_start();?>
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 
@@ -10,34 +10,11 @@
 
 <body>
     <?php
-        $servername = "localhost";
-        $username = "jdm";
-        $password = "1121";
-        $validation = FALSE;
-        
-        // Validate & Login 
-        function login($user, $pass, $username, $password, $validation)
-        {
-            if ($username != $user || $password != $pass)
-            { 
-                echo '<p class="wrong">Wrong Username/Password</p>';
-            } else {
-                $validation = TRUE;
-                $_SESSION['user'] = "$username";
-                $_SESSION['pass'] = "$password";
-                $_SESSION['vali'] = "$validation";
-                header("Location: employees.php");
-            }
-            return 0;
-        }
-        //check if username and password are set
-        function check_auth_set($user, $pass, $username, $password, $validation)
-        {
-            if (isset($user) && isset($pass))
-            {
-                login($user, $pass, $username, $password, $validation);
-            }
-        }
+    include 'functions.php';
+    $servername = "localhost";
+    $username = "root";
+    $password = "1121";
+    $validation = FALSE;
     ?>
     <h2 class="page_title">Hospital Database Login</h2>
     <form class="logform" method="POST">
@@ -50,7 +27,7 @@
         </div>
     </form>
     <?php
-        check_auth_set($_POST['user'], $_POST['pass'], $username, $password, $validation);
+    check_auth_set($_POST['user'], $_POST['pass'], $username, $password, $validation);
     ?>
 
 </body>
