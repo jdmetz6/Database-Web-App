@@ -15,9 +15,6 @@
     $username = "root";
     $password = "1121";
     $validation = FALSE;
-    if (isset($_POST['user']) && isset($_POST['pass'])) {
-        login($_POST['user'], $_POST['pass'], $servername, $username, $password, $validation);
-    }
     ?>
     <h2 class="page_title">Hospital Database Login</h2>
     <form class="logform" method="POST">
@@ -29,6 +26,11 @@
             <button class="login_button" type="submit">Submit</button>
         </div>
     </form>
+    <?php
+    if (isset($_POST['user']) && isset($_POST['pass'])) {
+        login($_POST['user'], $_POST['pass'], $servername, $username, $password, $validation);
+    }
+    ?>
 </body>
 
 </html>
