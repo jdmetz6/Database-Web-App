@@ -1,24 +1,19 @@
 <?php
+
 // Validate & Login 
-function login($user, $pass, $username, $password, $validation)
+function login($user, $pass, $servername, $username, $password, $validation)
 {
     if ($username != $user || $password != $pass) {
         echo '<p class="wrong">Wrong Username/Password</p>';
     } else {
         $validation = TRUE;
+        $_SESSION['serv'] = "$servername";
         $_SESSION['user'] = "$username";
         $_SESSION['pass'] = "$password";
         $_SESSION['vali'] = "$validation";
         header("Location: employees.php");
     }
     return 0;
-}
-//check if username and password are set
-function check_auth_set($user, $pass, $username, $password, $validation)
-{
-    if (isset($user) && isset($pass)) {
-        login($user, $pass, $username, $password, $validation);
-    }
 }
 
 function number_of_connections($conn)
@@ -108,18 +103,8 @@ function default_rooms_result($result)
 
 function new_emp_form($connec)
 {
-    $id = $_POST['id'];
-    $fname = $_POST['fname'];
-    $lname = $_POST['lname'];
-    $bday = $_POST['bday'];
-    $sex = $_POST['sex'];
-    $address = $_POST['address'];
-    $phone = $_POST['phone'];
-    $title = $_POST['title'];
-    $salary = $_POST['salary'];
-    $hiredate = $_POST['hiredate'];
-
     if (isset($_POST['new_emp_button'])) {
+
         echo  '<form class="new_emp_form" method="POST">
                 <div class="container">
                     <label for="id"><b>ID</b></label>
@@ -147,6 +132,17 @@ function new_emp_form($connec)
             </form>';
     }
     if (isset($_POST['new_emp_submit'])) {
+        $id = $_POST['id'];
+        $fname = $_POST['fname'];
+        $lname = $_POST['lname'];
+        $bday = $_POST['bday'];
+        $sex = $_POST['sex'];
+        $address = $_POST['address'];
+        $phone = $_POST['phone'];
+        $title = $_POST['title'];
+        $salary = $_POST['salary'];
+        $hiredate = $_POST['hiredate'];
+
         $sql = "INSERT INTO employee VALUES ( '$id', '$fname', '$lname', '$bday', '$sex', '$address', '$phone', '$title', '$salary', '$hiredate' );";
         mysqli_query($connec, $sql) or die(mysqli_error($connec));
 
@@ -160,9 +156,8 @@ function new_emp_form($connec)
 
 function delete_emp_form($connec)
 {
-    $id = $_POST['delete_id'];
-
     if (isset($_POST['delete_emp_button'])) {
+        
         echo  '<form class="remove_emp_form" method="POST">
                     <div class="container">
                         <label for="id"><b>ID</b></label>
@@ -172,7 +167,7 @@ function delete_emp_form($connec)
                  </form>';
     }
     if (isset($_POST['remove_emp_submit'])) {
-
+        $id = $_POST['delete_id'];
         $sql = "DELETE FROM employee WHERE empid=$id;";
         mysqli_query($connec, $sql) or die(mysqli_error($connec));
 
