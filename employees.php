@@ -38,13 +38,10 @@
 
     <?php
     include 'functions.php';
-    check_validation($_SESSION['vali']);
-    $conn = db_connect();
-    select_db($conn);
+    $conn = db_connect($_SESSION['vali']);
+    default_employee_result($conn);
     new_emp_form($conn);
     delete_emp_form($conn);
-    $result = default_employee_query($conn);
-    default_employee_result($result);
     logout_button();
     number_of_connections($conn);
     ?>
