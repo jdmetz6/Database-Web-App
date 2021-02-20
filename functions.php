@@ -27,13 +27,6 @@ function number_of_connections($conn)
     $result->free_result();
 }
 
-function check_validation($validation)
-{
-    if ($validation == FALSE || empty($validation)) {
-        header("Location: index.php");
-    }
-}
-
 function logout_button()
 {
     if (isset($_POST['logout'])) {
@@ -43,62 +36,21 @@ function logout_button()
     }
 }
 
-function db_connect()
+function db_connect($validation)
 {
-    $connection = new mysqli($_SESSION['serv'], $_SESSION['user'], $_SESSION['pass']);
+    if ($validation == FALSE || empty($validation)) {
+        header("Location: index.php");
+        return 0;
+    } else {
+        $connection = new mysqli($_SESSION['serv'], $_SESSION['user'], $_SESSION['pass']);
+    }
     // Check connection
     if ($connection->connect_error) {
         die("Failed: " . $connection->connect_error);
+    } else {
+        mysqli_query($connection, 'USE dbapp') or die(mysqli_error($connection));
     }
     return $connection;
-}
-
-function select_db($connec)
-{
-    $sql = 'USE dbapp;';
-    $result = mysqli_query($connec, $sql) or die(mysqli_error($connec));
-}
-
-function default_rooms_query($connec)
-{
-    $sql = 'select patient.pid, patient.fname, patient.lname, room.room_type, room.room_number 
-    from patient 
-    join assign_room ON patient.pid = assign_room.pid 
-    join room ON assign_room.room_number = room.room_number;';
-    $result = mysqli_query($connec, $sql) or die(mysqli_error($connec));
-    return $result;
-}
-
-function default_rooms_result($result)
-{
-    $field_names = [
-        'Patient ID',
-        'Patient First Name',
-        'Patient Last Name',
-        'Room Type',
-        'Room Number'
-    ];
-
-    echo '<table class=tabl>';
-    echo '<tr class=column>';
-    // Print Column Names
-    foreach ($field_names as $value) {
-        echo '<td>' . $value . '</td>';
-    }
-    echo '</tr>';
-
-    // Print Data
-    $fieldNum = mysqli_num_fields($result);
-    while ($row = mysqli_fetch_array($result)) {
-        echo "<tr class=row>";
-        for ($x = 0; $x < $fieldNum; $x++) {
-            echo "<td>" . $row[$x] . "</td>";
-        }
-        echo "</br>";
-        echo "</tr>";
-    }
-    echo '</table>';
-    $result->free_result();
 }
 
 function new_emp_form($connec)
@@ -179,15 +131,10 @@ function delete_emp_form($connec)
     }
 }
 
-function default_employee_query($connec)
+function default_employee_result($connec)
 {
     $sql = 'select * from employee;';
     $result = mysqli_query($connec, $sql) or die(mysqli_error($connec));
-    return $result;
-}
-
-function default_employee_result($result)
-{
     $field_names = ['ID', 'First Name', 'Last Name', 'Birthday', 'Gender', 'Address', 'Phone', 'Job Title', 'Salary', 'Hire Date'];
 
     echo '<table class=tabl>';
@@ -212,15 +159,11 @@ function default_employee_result($result)
     $result->free_result();
 }
 
-function default_patient_query($connec)
+function default_patient_result($connec)
 {
     $sql = 'select * from patient;';
     $result = mysqli_query($connec, $sql) or die(mysqli_error($connec));
-    return $result;
-}
 
-function default_patient_result($result)
-{
     $field_names = [
         'ID',
         'First Name',
@@ -254,18 +197,14 @@ function default_patient_result($result)
     $result->free_result();
 }
 
-function default_appointment_query($connec)
+function default_appointment_result($connec)
 {
     $sql = 'select patient.pid, patient.lname, patient.fname, appointment.date, appointment.time, employee.job_title, employee.lname, employee.fname 
     from patient 
     join appointment on appointment.pid = patient.pid 
     join employee on employee.empid = appointment.empid;';
     $result = mysqli_query($connec, $sql) or die(mysqli_error($connec));
-    return $result;
-}
 
-function default_appointment_result($result)
-{
     $field_names = [
         'Patient ID',
         'Patient Last Name',
@@ -275,6 +214,44 @@ function default_appointment_result($result)
         'Job Title',
         'Employee Last Name',
         'Employee First Name'
+    ];
+
+    echo '<table class=tabl>';
+    echo '<tr class=column>';
+    // Print Column Names
+    foreach ($field_names as $value) {
+        echo '<td>' . $value . '</td>';
+    }
+    echo '</tr>';
+
+    // Print Data
+    $fieldNum = mysqli_num_fields($result);
+    while ($row = mysqli_fetch_array($result)) {
+        echo "<tr class=row>";
+        for ($x = 0; $x < $fieldNum; $x++) {
+            echo "<td>" . $row[$x] . "</td>";
+        }
+        echo "</br>";
+        echo "</tr>";
+    }
+    echo '</table>';
+    $result->free_result();
+}
+
+function default_rooms_result($connec)
+{
+    $sql = 'select patient.pid, patient.fname, patient.lname, room.room_type, room.room_number 
+    from patient 
+    join assign_room ON patient.pid = assign_room.pid 
+    join room ON assign_room.room_number = room.room_number;';
+    $result = mysqli_query($connec, $sql) or die(mysqli_error($connec));
+
+    $field_names = [
+        'Patient ID',
+        'Patient First Name',
+        'Patient Last Name',
+        'Room Type',
+        'Room Number'
     ];
 
     echo '<table class=tabl>';
