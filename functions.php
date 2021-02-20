@@ -29,7 +29,8 @@ function number_of_connections($conn)
 
 function logout_button()
 {
-    if (isset($_POST['logout'])) {
+    if (isset($_POST['logout'])) 
+    {
         session_destroy();
         header("Location: index.php");
         $_SESSION['vali'] = FALSE;
@@ -38,7 +39,8 @@ function logout_button()
 
 function db_connect($validation)
 {
-    if ($validation == FALSE || empty($validation)) {
+    if ($validation == FALSE || empty($validation)) 
+    {
         header("Location: index.php");
         return 0;
     } else {
@@ -55,8 +57,8 @@ function db_connect($validation)
 
 function new_emp_form($connec)
 {
-    if (isset($_POST['new_emp_button'])) {
-
+    if (isset($_POST['new_emp_button'])) 
+    {
         echo  '<form class="new_emp_form" method="POST">
                 <div class="container">
                     <label for="id"><b>ID</b></label>
@@ -83,7 +85,8 @@ function new_emp_form($connec)
                 </div>
             </form>';
     }
-    if (isset($_POST['new_emp_submit'])) {
+    if (isset($_POST['new_emp_submit'])) 
+    {
         $id = $_POST['id'];
         $fname = $_POST['fname'];
         $lname = $_POST['lname'];
@@ -108,7 +111,8 @@ function new_emp_form($connec)
 
 function delete_emp_form($connec)
 {
-    if (isset($_POST['delete_emp_button'])) {
+    if (isset($_POST['delete_emp_button'])) 
+    {
 
         echo  '<form class="remove_emp_form" method="POST">
                     <div class="container">
@@ -118,7 +122,8 @@ function delete_emp_form($connec)
                     </div>
                  </form>';
     }
-    if (isset($_POST['remove_emp_submit'])) {
+    if (isset($_POST['remove_emp_submit'])) 
+    {
         $id = $_POST['delete_id'];
         $sql = "DELETE FROM employee WHERE empid=$id;";
         mysqli_query($connec, $sql) or die(mysqli_error($connec));
@@ -140,16 +145,19 @@ function default_employee_result($connec)
     echo '<table class=tabl>';
     echo '<tr class=column>';
     // Print Column Names
-    foreach ($field_names as $value) {
+    foreach ($field_names as $value) 
+    {
         echo '<td>' . $value . '</td>';
     }
     echo '</tr>';
 
     // Print Data
     $fieldNum = mysqli_num_fields($result);
-    while ($row = mysqli_fetch_array($result)) {
+    while ($row = mysqli_fetch_array($result)) 
+    {
         echo "<tr class=row>";
-        for ($x = 0; $x < $fieldNum; $x++) {
+        for ($x = 0; $x < $fieldNum; $x++) 
+        {
             echo "<td>" . $row[$x] . "</td>";
         }
         echo "</br>";
@@ -177,16 +185,19 @@ function default_patient_result($connec)
     echo '<table class=tabl>';
     echo '<tr class=column>';
     // Print Column Names
-    foreach ($field_names as $value) {
+    foreach ($field_names as $value) 
+    {
         echo '<td>' . $value . '</td>';
     }
     echo '</tr>';
 
     // Print Data
     $fieldNum = mysqli_num_fields($result);
-    while ($row = mysqli_fetch_array($result)) {
+    while ($row = mysqli_fetch_array($result)) 
+    {
         echo "<tr class=row>";
-        for ($x = 0; $x < $fieldNum; $x++) {
+        for ($x = 0; $x < $fieldNum; $x++) 
+        {
             echo "<td>" . $row[$x] . "</td>";
         }
         echo "</br>";
@@ -219,16 +230,19 @@ function default_appointment_result($connec)
     echo '<table class=tabl>';
     echo '<tr class=column>';
     // Print Column Names
-    foreach ($field_names as $value) {
+    foreach ($field_names as $value) 
+    {
         echo '<td>' . $value . '</td>';
     }
     echo '</tr>';
 
     // Print Data
     $fieldNum = mysqli_num_fields($result);
-    while ($row = mysqli_fetch_array($result)) {
+    while ($row = mysqli_fetch_array($result)) 
+    {
         echo "<tr class=row>";
-        for ($x = 0; $x < $fieldNum; $x++) {
+        for ($x = 0; $x < $fieldNum; $x++) 
+        {
             echo "<td>" . $row[$x] . "</td>";
         }
         echo "</br>";
@@ -257,16 +271,19 @@ function default_rooms_result($connec)
     echo '<table class=tabl>';
     echo '<tr class=column>';
     // Print Column Names
-    foreach ($field_names as $value) {
+    foreach ($field_names as $value) 
+    {
         echo '<td>' . $value . '</td>';
     }
     echo '</tr>';
 
     // Print Data
     $fieldNum = mysqli_num_fields($result);
-    while ($row = mysqli_fetch_array($result)) {
+    while ($row = mysqli_fetch_array($result)) 
+    {
         echo "<tr class=row>";
-        for ($x = 0; $x < $fieldNum; $x++) {
+        for ($x = 0; $x < $fieldNum; $x++) 
+        {
             echo "<td>" . $row[$x] . "</td>";
         }
         echo "</br>";
