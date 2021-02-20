@@ -109,7 +109,7 @@ function new_emp_form($connec)
 function delete_emp_form($connec)
 {
     if (isset($_POST['delete_emp_button'])) {
-        
+
         echo  '<form class="remove_emp_form" method="POST">
                     <div class="container">
                         <label for="id"><b>ID</b></label>
