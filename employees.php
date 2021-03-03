@@ -39,10 +39,10 @@
     <?php
     include 'functions.php';
     $conn = db_connect($_SESSION['vali']);
-    default_employee_result($conn);
     new_emp_form($conn);
     delete_emp_form($conn);
     logout_button();
+    default_employee_result($conn);
     number_of_connections($conn);
     ?>
 </body>
