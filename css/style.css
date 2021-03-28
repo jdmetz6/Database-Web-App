@@ -125,6 +125,11 @@ button:hover {
 	background-color: rgb(123, 189, 255);;
 }
 
+.help {
+	font-size: large;
+	color:white;
+}
+
 .login_as {
 	font-size: medium;
 	font-weight: 300;
