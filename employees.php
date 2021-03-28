@@ -20,6 +20,7 @@
         </form>
         <p class="login_as">Logged in as: <?php echo '       ';
                                             print($_SESSION['user']); ?></p>
+        <a class="help" href="https://github.com/jdmetz6/Database-Web-App/wiki" target="_blank">Help</a>
     </div>
 
     <h1 class="title">Employee Information</h1>
