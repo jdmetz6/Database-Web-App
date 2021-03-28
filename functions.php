@@ -85,6 +85,7 @@ function new_emp_form($connec)
                 </div>
             </form>';
     }
+
     if (isset($_POST['new_emp_submit'])) 
     {
         $id = $_POST['id'];
@@ -98,8 +99,9 @@ function new_emp_form($connec)
         $salary = $_POST['salary'];
         $hiredate = $_POST['hiredate'];
 
-        $sql = "INSERT INTO employee VALUES ( '$id', '$fname', '$lname', '$bday', '$sex', '$address', '$phone', '$title', '$salary', '$hiredate' );";
-        mysqli_query($connec, $sql) or die(mysqli_error($connec));
+        $sql = $connec->prepare("INSERT INTO employee (empid, fname, lname, birthday, gender, address, phone, job_title, salary, hire_date) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )");
+        $sql->bind_param("ssssssssss", $id, $fname, $lname, $bday, $sex, $address, $phone, $title, $salary, $hiredate);
+        $sql->execute();
 
         if (!mysqli_errno($connec) && !mysqli_error($connec)) {
             echo '<p class="success">Success!</p>';
@@ -122,11 +124,13 @@ function delete_emp_form($connec)
                     </div>
                  </form>';
     }
+
     if (isset($_POST['remove_emp_submit'])) 
     {
         $id = $_POST['delete_id'];
-        $sql = "DELETE FROM employee WHERE empid=$id;";
-        mysqli_query($connec, $sql) or die(mysqli_error($connec));
+        $sql = $connec->prepare("DELETE FROM employee WHERE empid=?;");
+        $sql->bind_param("s",$id);
+        $sql->execute();
 
         if (!mysqli_errno($connec) && !mysqli_error($connec)) {
             echo '<p class="success">Success!</p>';
@@ -210,10 +214,10 @@ function default_patient_result($connec)
 
 function default_appointment_result($connec)
 {
-    $sql = 'select patient.pid, patient.lname, patient.fname, appointment.date, appointment.time, employee.job_title, employee.lname, employee.fname 
+    $sql = "select patient.pid, patient.lname, patient.fname, appointment.date, appointment.time, employee.job_title, employee.lname, employee.fname 
     from patient 
     join appointment on appointment.pid = patient.pid 
-    join employee on employee.empid = appointment.empid;';
+    join employee on employee.empid = appointment.empid;";
     $result = mysqli_query($connec, $sql) or die(mysqli_error($connec));
 
     $field_names = [
