@@ -100,7 +100,7 @@ function new_emp_form($connec)
         $hiredate = $_POST['hiredate'];
 
         $sql = $connec->prepare("INSERT INTO employee (empid, fname, lname, birthday, gender, address, phone, job_title, salary, hire_date) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )");
-        $sql->bind_param("ssssssssss", $id, $fname, $lname, $bday, $sex, $address, $phone, $title, $salary, $hiredate);
+        $sql->bind_param("isssssssss", $id, $fname, $lname, $bday, $sex, $address, $phone, $title, $salary, $hiredate);
         $sql->execute();
 
         if (!mysqli_errno($connec) && !mysqli_error($connec)) {
@@ -129,7 +129,7 @@ function delete_emp_form($connec)
     {
         $id = $_POST['delete_id'];
         $sql = $connec->prepare("DELETE FROM employee WHERE empid=?;");
-        $sql->bind_param("s",$id);
+        $sql->bind_param("i",$id);
         $sql->execute();
 
         if (!mysqli_errno($connec) && !mysqli_error($connec)) {
