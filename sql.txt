@@ -1,0 +1,122 @@
+CREATE TABLE employee ( 
+empid int NOT NULL AUTO_INCREMENT, 
+fname varchar(25) NOT NULL, 
+lname varchar(25) NOT NULL, 
+birthday varchar(20) NOT NULL, 
+gender char(1) NOT NULL, 
+address varchar(255) NOT NULL, 
+phone varchar(20) NOT NULL, 
+job_title varchar(20) NOT NULL, 
+salary Decimal(10, 2) NOT NULL, 
+hire_date varchar(20) NOT NULL, 
+PRIMARY KEY (empid));
+
+CREATE TABLE patient (
+ pid int NOT NULL,
+ fname varchar(25) NOT NULL,
+ lname varchar(25) NOT NULL,
+ birthday varchar(20) NOT NULL,
+ gender char(1) NOT NULL,
+ phone varchar(20) NOT NULL,
+ address varchar(100) NOT NULL,
+ PRIMARY KEY (pid));
+
+CREATE TABLE appointment (
+empid int NOT NULL, 
+pid int NOT NULL, 
+date varchar(20) NOT NULL, 
+time varchar(7) NOT NULL, 
+FOREIGN KEY (pid) REFERENCES patient (pid), 
+FOREIGN KEY (empid) REFERENCES employee (empid));
+
+CREATE TABLE medication (
+medname varchar(30) NOT NULL, 
+price float NOT NULL, 
+count varchar(30) NOT NULL, 
+description varchar(255) NOT NULL, 
+PRIMARY KEY (medname));
+
+
+CREATE TABLE prescriptions (
+medname varchar(30) NOT NULL, 
+pid int NOT NULL, 
+empid int NOT NULL, 
+FOREIGN KEY (medname) REFERENCES medication (medname), 
+FOREIGN KEY (pid) REFERENCES patient (pid), 
+FOREIGN KEY (empid) REFERENCES employee (empid));
+
+CREATE TABLE room (
+room_number int(3) NOT NULL, 
+room_type varchar(20), 
+PRIMARY KEY (room_number));
+
+CREATE TABLE assign_room (
+room_number int(3) NOT NULL, 
+pid int NOT NULL, 
+FOREIGN KEY (room_number) REFERENCES room (room_number), 
+FOREIGN KEY (pid) REFERENCES patient (pid));
+
+
+
+INSERT INTO employee VALUES ( 
+'185', 'Kelly', 'Sierra', 'October 25th, 1988' ,'F', '1032 W 91st St, Los Angeles, California, 90044', '(323) 933-1126', 'Doctor', '199852.00', 'November 22nd, 2014'), 
+('252', 'Calvin','Lareina','November 8th, 1985','M','1219 W 54th St, Los Angeles, California, 90037','(310) 836-1558','Doctor','114436.00','August 8th, 2013'), 
+('975','Spencer','Graham','February 22nd, 1981','M','11643 Ruthelen St, Los Angeles, California, 90047','(661) 664-6428','Nurse','100956.00','December 3rd, 2014'),
+('927','Lewis','Reilly','November 9th, 1990','M','1051 S Sherbourne Dr #1, Los Angeles, California, 90035','(323) 451-3058','Doctor','153521.00','August 14th, 2015'),
+('457','Keira','Ramsey','November 8th, 1985','F','1000 S Westgate Ave, Los Angeles, California, 90049','(323) 834-1703','Nurse','98531.00','January 16th, 2011'),
+('883','Katherine','Holt','May 4th, 1997','F','1209 W 121st St, Los Angeles, California, 90044','(909) 391-6202','Nurse','75235.00','May 19th, 2017'),
+('284','Hugo','Middleton','August 8th, 1962','M','10425 Tabor St, Los Angeles, California, 90034','(310) 207-1320','Doctor','182700.00','June 12th, 1992'),
+('923','Harry','Kennedy','October 25th, 1998','M','1262 S Longwood Ave, Los Angeles, California, 90019','(323) 754-3804','Nurse','64189.00','August 8th, 2018');
+ 
+INSERT INTO patient VALUES ('12','Suzannah','Villa','December 26, 1995','F','(951) 326-9893', '4212 Denver Avenue, Los Angeles, California 90017'),
+('43','Zhane', 'Padilla', 'May 6, 1997', 'M', '(213) 430-9190', '909-1/2 E 49th St, Los Angeles, California, 90011'),
+('77', 'Athena', 'Graves','January 1, 1998','F','(323) 651-3408','680 E 47th St, Los Angeles, California, 90011'),
+('98','Molly', 'Rios','April 20, 2007', 'F', '(213) 747-0819', '9400 S Normandie Ave #14, Los Angeles, California, 90044'),
+('74', 'Bill', 'Nelson', 'January 19, 2010', 'M', '(213) 626-2432', '7609 Mckinley Ave, Los Angeles, California, 90001'),           
+('34', 'Glyn', 'Thornton', 'October 15, 2012', 'M', '(323) 661-3956', '6736 S Sherbourne Dr, Los Angeles, California, 90056'),    
+('21', 'Elin', 'Humphrey', 'August 30, 2013', 'F', '(323) 294-3170', '5723 Morgan Ave, Los Angeles, California, 90011'),        
+('61', 'Alby', 'Greig', 'May 25, 2017', 'F', '(323) 294-9917', '400 S Main St, Los Angeles, California, 90013');
+
+
+INSERT INTO appointment VALUES (
+'185','61','August 8th, 2020','13:30'),
+('284','21','August 7th, 2020','15:30'),
+('252','34','August 14th, 2020','17:00'),
+('975','74','August 9th, 2020','09:00'),
+('883','98','August 8th, 2020','13:30'),
+('284','77','August 8th, 2020','10:30'),
+('185','12','August 8th, 2020','11:30'),
+('927','43','August 10th, 2020','13:30');
+
+
+INSERT INTO medication VALUES (
+'Amoxicillin', '12.88', '30 Tablets', '250 Mg Cap Nort'),
+('Crestor','298.42', '30 Tablets','10 Mg Tab Astr'),
+('Norvasc','233.18', '30 Tablets','5 Mg Tab Pfiz'),
+('Fluoxetine','12.88', '30 Tablets','10 Mg Cap Auro'),
+('Cozaar','177.56', '30 Tablets','100 Mg Tab Merc'),
+('Cymbalta','295.44', '30 Tablets','30 Mg Cap Lill');
+ 
+INSERT INTO prescriptions VALUES (
+'Amoxicillin','61','883'),
+('Fluoxetine','34','923'),
+('Cozaar','98','883'),
+('Crestor','12','975'),
+('Fluoxetine','98','975'),
+('Amoxicillin','43','185');
+ 
+INSERT INTO room VALUES (
+'234','Operating Room'),
+('103','Intensive Care'),
+('222','Ward'),
+('202','Intensive Care'),
+('211','Ward'),
+('312','Ward'),
+('301','Operating Room'),
+('111','Intensive Care');
+
+INSERT INTO assign_room VALUES (
+'234','61'),
+('211','34'),
+('202','98'),
+('211','43');
