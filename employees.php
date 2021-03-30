@@ -1,51 +1,27 @@
-<?php session_start(); ?>
-<!DOCTYPE html>
-<html>
+<?php include 'header.php'; ?>
 
-<head>
-    <meta charset="utf-8">
-    <title>Employee</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-</head>
-
-<body>
-
-    <div class="menuBar">
-        <button class="tablinks" onclick="window.location.href='employees.php';">Employees</button>
-        <button class="tablinks" onclick="window.location.href='patients.php';">Patients</button>
-        <button class="tablinks" onclick="window.location.href='appointments.php';">Appointments</button>
-        <button class="tablinks" onclick="window.location.href='occupied_rooms.php';">Rooms</button>
-        <form class="logout_button" method="POST">
-            <button type="submit" name="logout" class="logout_button">Logout</button>
+<h1 class="title">Employee Information</h1>
+<div class="new_delete_box">
+    <div class="new_emp_box">
+        <form class="new_emp" method="POST">
+            <button type="submit" class="new_emp_button" name="new_emp_button">ADD NEW</button>
         </form>
-        <p class="login_as">Logged in as: <?php echo '       ';
-                                            print($_SESSION['user']); ?></p>
-        <a class="help" href="https://github.com/jdmetz6/Database-Web-App/wiki" target="_blank">Help</a>
     </div>
-
-    <h1 class="title">Employee Information</h1>
-    <div class="new_delete_box">
-        <div class="new_emp_box">
-            <form class="new_emp" method="POST">
-                <button type="submit" class="new_emp_button" name="new_emp_button">ADD NEW</button>
-            </form>
-        </div>
-        <div class="delete_emp_box">
-            <form class="delete_emp" method="POST">
-                <button type="submit" class="delete_emp_button" name="delete_emp_button">Delete</button>
-            </form>
-        </div>
+    <div class="delete_emp_box">
+        <form class="delete_emp" method="POST">
+            <button type="submit" class="delete_emp_button" name="delete_emp_button">Delete</button>
+        </form>
     </div>
+</div>
 
-    <?php
-    include 'functions.php';
-    $conn = db_connect($_SESSION['vali']);
-    new_emp_form($conn);
-    delete_emp_form($conn);
-    logout_button();
-    default_employee_result($conn);
-    number_of_connections($conn);
-    ?>
+<?php
+include 'functions.php';
+$conn = db_connect($_SESSION['vali']);
+new_emp_form($conn);
+delete_emp_form($conn);
+logout_button();
+default_employee_result($conn);
+?>
 </body>
 
 </html>
