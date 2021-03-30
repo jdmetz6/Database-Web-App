@@ -16,17 +16,6 @@ function login($user, $pass, $servername, $username, $password, $validation)
     return 0;
 }
 
-function number_of_connections($conn)
-{
-    $sql = "show status where `variable_name` = 'Threads_connected';";
-    $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
-    while ($row = mysqli_fetch_array($result)) {
-        echo $row[0] . ": ";
-        echo $row[1] . "<br>";
-    }
-    $result->free_result();
-}
-
 function logout_button()
 {
     if (isset($_POST['logout'])) 
