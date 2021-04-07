@@ -141,23 +141,34 @@ button:hover {
 	text-align: center;
 	padding-top: 50px;
 	font-size: xx-large;
+	padding-bottom: 50px;
 }
 
+button.med_button{
+	padding: 10px;
+	background-color: dodgerblue;
+	border: dodgerblue;
+	font-size: large;
+	
+}
 
+button.med_button:hover{
+	background-color:rgb(123, 189, 255);
+}
 
-
+.a{
+	padding-top: 50%;
+}
 .tabl{
 	width: 100%;
 	font-size: large;
 	text-align: center;
 	margin-top: -50px;
-	
 }
 
 .column {
 	font-weight: 800;
 	background-color: dodgerblue;
-	
 }
 
 .row{
@@ -248,3 +259,7 @@ button:hover {
 	margin-bottom: -25px;
 	font-size:larger;
 }
+
+
+
+
