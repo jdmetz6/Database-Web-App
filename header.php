@@ -1,6 +1,9 @@
-<?php session_start(); ?>
+<?php session_start(); 
+include 'functions.php';
+logout_button();
+?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -19,3 +22,4 @@
         <p class="login_as">Logged in as: <?php echo '       ';
                                             print($_SESSION['user']); ?></p>
     </div>
+    
