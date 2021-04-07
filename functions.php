@@ -1,5 +1,5 @@
-<?php
 
+<?php
 // Validate & Login 
 function login($user, $pass, $servername, $username, $password, $validation)
 {
@@ -18,8 +18,7 @@ function login($user, $pass, $servername, $username, $password, $validation)
 
 function logout_button()
 {
-    if (isset($_POST['logout'])) 
-    {
+    if (isset($_POST['logout'])) {
         session_destroy();
         header("Location: index.php");
         $_SESSION['vali'] = FALSE;
@@ -28,8 +27,7 @@ function logout_button()
 
 function db_connect($validation)
 {
-    if ($validation == FALSE || empty($validation)) 
-    {
+    if ($validation == FALSE || empty($validation)) {
         header("Location: index.php");
         return 0;
     } else {
@@ -46,8 +44,7 @@ function db_connect($validation)
 
 function new_emp_form($connec)
 {
-    if (isset($_POST['new_emp_button'])) 
-    {
+    if (isset($_POST['new_emp_button'])) {
         echo  '<form class="new_emp_form" method="POST">
                 <div class="container">
                     <label for="id"><b>ID</b></label>
@@ -75,8 +72,7 @@ function new_emp_form($connec)
             </form>';
     }
 
-    if (isset($_POST['new_emp_submit'])) 
-    {
+    if (isset($_POST['new_emp_submit'])) {
         $id = $_POST['id'];
         $fname = $_POST['fname'];
         $lname = $_POST['lname'];
@@ -102,8 +98,7 @@ function new_emp_form($connec)
 
 function delete_emp_form($connec)
 {
-    if (isset($_POST['delete_emp_button'])) 
-    {
+    if (isset($_POST['delete_emp_button'])) {
 
         echo  '<form class="remove_emp_form" method="POST">
                     <div class="container">
@@ -114,11 +109,10 @@ function delete_emp_form($connec)
                  </form>';
     }
 
-    if (isset($_POST['remove_emp_submit'])) 
-    {
+    if (isset($_POST['remove_emp_submit'])) {
         $id = $_POST['delete_id'];
         $sql = $connec->prepare("DELETE FROM employee WHERE empid=?;");
-        $sql->bind_param("i",$id);
+        $sql->bind_param("i", $id);
         $sql->execute();
 
         if (!mysqli_errno($connec) && !mysqli_error($connec)) {
@@ -127,161 +121,4 @@ function delete_emp_form($connec)
             echo mysqli_errno($connec) . ": " . mysqli_error($connec) . "\n";
         }
     }
-}
-
-function default_employee_result($connec)
-{
-    $sql = 'select * from employee;';
-    $result = mysqli_query($connec, $sql) or die(mysqli_error($connec));
-    $field_names = ['ID', 'First Name', 'Last Name', 'Birthday', 'Gender', 'Address', 'Phone', 'Job Title', 'Salary', 'Hire Date'];
-
-    echo '<table class=tabl>';
-    echo '<tr class=column>';
-    // Print Column Names
-    foreach ($field_names as $value) 
-    {
-        echo '<td>' . $value . '</td>';
-    }
-    echo '</tr>';
-
-    // Print Data
-    $fieldNum = mysqli_num_fields($result);
-    while ($row = mysqli_fetch_array($result)) 
-    {
-        echo "<tr class=row>";
-        for ($x = 0; $x < $fieldNum; $x++) 
-        {
-            echo "<td>" . $row[$x] . "</td>";
-        }
-        echo "</br>";
-        echo "</tr>";
-    }
-    echo '</table>';
-    $result->free_result();
-}
-
-function default_patient_result($connec)
-{
-    $sql = 'select * from patient;';
-    $result = mysqli_query($connec, $sql) or die(mysqli_error($connec));
-
-    $field_names = [
-        'ID',
-        'First Name',
-        'Last Name',
-        'Birthday',
-        'Gender',
-        'Address',
-        'Phone'
-    ];
-
-    echo '<table class=tabl>';
-    echo '<tr class=column>';
-    // Print Column Names
-    foreach ($field_names as $value) 
-    {
-        echo '<td>' . $value . '</td>';
-    }
-    echo '</tr>';
-
-    // Print Data
-    $fieldNum = mysqli_num_fields($result);
-    while ($row = mysqli_fetch_array($result)) 
-    {
-        echo "<tr class=row>";
-        for ($x = 0; $x < $fieldNum; $x++) 
-        {
-            echo "<td>" . $row[$x] . "</td>";
-        }
-        echo "</br>";
-        echo "</tr>";
-    }
-
-    echo '</table>';
-    $result->free_result();
-}
-
-function default_appointment_result($connec)
-{
-    $sql = "select patient.pid, patient.lname, patient.fname, appointment.date, appointment.time, employee.job_title, employee.lname, employee.fname 
-    from patient 
-    join appointment on appointment.pid = patient.pid 
-    join employee on employee.empid = appointment.empid;";
-    $result = mysqli_query($connec, $sql) or die(mysqli_error($connec));
-
-    $field_names = [
-        'Patient ID',
-        'Patient Last Name',
-        'Patient First Name',
-        'Date',
-        'Time',
-        'Job Title',
-        'Employee Last Name',
-        'Employee First Name'
-    ];
-
-    echo '<table class=tabl>';
-    echo '<tr class=column>';
-    // Print Column Names
-    foreach ($field_names as $value) 
-    {
-        echo '<td>' . $value . '</td>';
-    }
-    echo '</tr>';
-
-    // Print Data
-    $fieldNum = mysqli_num_fields($result);
-    while ($row = mysqli_fetch_array($result)) 
-    {
-        echo "<tr class=row>";
-        for ($x = 0; $x < $fieldNum; $x++) 
-        {
-            echo "<td>" . $row[$x] . "</td>";
-        }
-        echo "</br>";
-        echo "</tr>";
-    }
-    echo '</table>';
-    $result->free_result();
-}
-
-function default_rooms_result($connec)
-{
-    $sql = 'select patient.pid, patient.fname, patient.lname, room.room_type, room.room_number 
-    from patient 
-    join assign_room ON patient.pid = assign_room.pid 
-    join room ON assign_room.room_number = room.room_number;';
-    $result = mysqli_query($connec, $sql) or die(mysqli_error($connec));
-
-    $field_names = [
-        'Patient ID',
-        'Patient First Name',
-        'Patient Last Name',
-        'Room Type',
-        'Room Number'
-    ];
-
-    echo '<table class=tabl>';
-    echo '<tr class=column>';
-    // Print Column Names
-    foreach ($field_names as $value) 
-    {
-        echo '<td>' . $value . '</td>';
-    }
-    echo '</tr>';
-
-    // Print Data
-    $fieldNum = mysqli_num_fields($result);
-    while ($row = mysqli_fetch_array($result)) 
-    {
-        echo "<tr class=row>";
-        for ($x = 0; $x < $fieldNum; $x++) 
-        {
-            echo "<td>" . $row[$x] . "</td>";
-        }
-        echo "</br>";
-        echo "</tr>";
-    }
-    echo '</table>';
-    $result->free_result();
 }
