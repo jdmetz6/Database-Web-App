@@ -68,6 +68,7 @@ function new_emp_form($connec)
                     <label for="hiredate"><b>Hire Date</b></label>
                     <input type="text" placeholder="Enter Hire Date" name="hiredate" value="" require>
                     <button class="add_emp_button" type="submit" name="new_emp_submit">Submit</button>
+                    <button class="cancel_emp_button" action="employee.php">Cancel</button>
                 </div>
             </form>';
     }
@@ -105,6 +106,7 @@ function delete_emp_form($connec)
                         <label for="id"><b>ID</b></label>
                         <input type="text" placeholder="Enter ID Number To Delete" name="delete_id" value="" require>
                         <button class="remove_emp_button" type="submit" name="remove_emp_submit">Submit</button>
+                        <button class="cancel_emp_button" action="employee.php">Cancel</button>
                     </div>
                  </form>';
     }
