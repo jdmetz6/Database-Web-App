@@ -27,7 +27,8 @@
         </div>
     </form>
     <?php
-    if (isset($_POST['user']) && isset($_POST['pass'])) {
+    if (isset($_POST['user']) && isset($_POST['pass'])) 
+    {
         login($_POST['user'], $_POST['pass'], $servername, $username, $password, $validation);
     }
     ?>
