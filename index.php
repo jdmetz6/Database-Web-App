@@ -16,7 +16,7 @@
     $password = "1121";
     $validation = FALSE;
     ?>
-    <h2 class="page_title">Hospital Database Login</h2>
+    <h2 class="login_page_title">Hospital Database Login</h2>
     <form class="logform" method="POST">
         <div class="container">
             <label for="user"><b>Username</b></label>
