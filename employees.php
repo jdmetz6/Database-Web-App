@@ -18,7 +18,8 @@ $conn = db_connect($_SESSION['vali']);
 new_emp_form($conn);
 delete_emp_form($conn);
 
-$sql = 'select * from employee;';
+$sql = 'select * 
+        from employee;';
 $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 $field_names = [
     'ID',
