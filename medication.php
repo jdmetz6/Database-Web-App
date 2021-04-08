@@ -1,5 +1,5 @@
 <?php include "header.php"; ?>
-<h1 class="title">Prescribed Medication</h1><br><br><br><br>
+<h1 class="title">Prescribed Medication</h1>
 <?php
 $conn = db_connect($_SESSION['vali']);
 $sql = "select patient.pid, patient.fname, patient.lname, medication.medname, medication.description, employee.job_title, employee.fname, employee.lname 
@@ -15,7 +15,9 @@ $field_names = [
     'Patient Last Name',
     'Medication',
     'Description',
-    'Prescribed By:'
+    'Prescribed By:',
+    '',
+    ''
 ];
 if (mysqli_num_rows($result) > 0) {
     echo "<table class=tabl>";
@@ -39,6 +41,6 @@ if (mysqli_num_rows($result) > 0) {
     echo "</table>";
     $result->free_result();
 } else {
-    echo "<h1 class='title'>No Medication Found</h1>";
+    echo "<h2 class='no_med'>No Medication Found</h2>";
 }
 include "footer.php";
