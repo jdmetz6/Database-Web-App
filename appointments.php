@@ -3,9 +3,9 @@
 <?php
 $conn = db_connect($_SESSION['vali']);
 $sql = "select patient.pid, patient.lname, patient.fname, appointment.date, appointment.time, employee.job_title, employee.lname, employee.fname 
-    from patient 
-    join appointment on appointment.pid = patient.pid 
-    join employee on employee.empid = appointment.empid;";
+        from patient 
+        join appointment on appointment.pid = patient.pid 
+        join employee on employee.empid = appointment.empid;";
 $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
 $field_names = [
