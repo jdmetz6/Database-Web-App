@@ -8,7 +8,7 @@
     </div>
     <div class="delete_emp_box">
         <form class="delete_emp" method="POST">
-            <button type="submit" class="delete_emp_button" name="delete_emp_button">Delete</button>
+            <button type="submit" class="delete_emp_button" name="delete_emp_button">DELETE</button>
         </form>
     </div>
 </div>
