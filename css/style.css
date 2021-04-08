@@ -102,6 +102,7 @@ span.psw {
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 10;
 }
 
 .tablinks {
@@ -150,9 +151,9 @@ span.psw {
 
 .title {
   text-align: center;
-  padding-top: 50px;
+  padding-top: 120px;
   font-size: 7ch;
-  padding-bottom: 50px;
+  padding-bottom: 20px;
 }
 
 button.med_button {
@@ -201,8 +202,14 @@ button.med_button:hover {
 }
 
 .new_emp_form {
-  margin-left: 33%;
-  margin-right: 33%;
+  background-color: #3180fe;
+  transform: translate(-50%, 5%);
+  left: 50%;
+  position: absolute;
+  width: 30%;
+  top: 10%;
+  border: none;
+  z-index: 9;
 }
 
 .add_emp_button {
@@ -212,7 +219,17 @@ button.med_button:hover {
   margin: 8px 0;
   border: none;
   cursor: pointer;
-  width: 100%;
+  width: 40%;
+}
+
+.cancel_emp_button {
+  background-color: #f83c3c;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 40%;
 }
 
 .delete_emp_button {
@@ -228,8 +245,14 @@ button.med_button:hover {
 }
 
 .remove_emp_form {
-  margin-left: 33%;
-  margin-right: 33%;
+  background-color: #3180fe;
+  transform: translate(-50%, 5%);
+  left: 50%;
+  position: absolute;
+  width: 30%;
+  top: 15%;
+  border: none;
+  z-index: 9;
 }
 
 .remove_emp_button {
@@ -239,7 +262,7 @@ button.med_button:hover {
   margin: 8px 0;
   border: none;
   cursor: pointer;
-  width: 100%;
+  width: 40%;
 }
 
 .delete_emp_box {
