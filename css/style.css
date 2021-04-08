@@ -112,6 +112,15 @@ button:hover {
 	
 }
 
+.logout_box {
+	float: right;
+	padding: 7px;
+	background-color: dodgerblue;
+	border: dodgerblue;
+	font-size: medium;
+	text-align: center;
+}
+
 .logout_button {
 	float: right;
 	padding: 7px;
@@ -127,7 +136,7 @@ button:hover {
 
 .help {
 	font-size: large;
-	color:white;
+	color:rgb(214, 214, 214);
 }
 
 .login_as {
@@ -145,10 +154,13 @@ button:hover {
 }
 
 button.med_button{
-	padding: 10px;
+	/*padding: 50px;*/
+	line-height: 3ch;
 	background-color: dodgerblue;
-	border: dodgerblue;
+	border-color: dodgerblue;
 	font-size: large;
+	width:10ch;
+	
 	
 }
 
@@ -160,15 +172,17 @@ button.med_button:hover{
 	padding-top: 50%;
 }
 .tabl{
-	width: 100%;
+	width:100%;
 	font-size: large;
 	text-align: center;
 	margin-top: -50px;
+	line-height: 4ch;
 }
 
 .column {
 	font-weight: 800;
 	background-color: dodgerblue;
+	
 }
 
 .row{
@@ -184,6 +198,7 @@ button.med_button:hover{
 	background-color: dodgerblue;
 	border: dodgerblue;
 	font-size: large;
+	width:15ch;
 	
 }
 
@@ -216,6 +231,7 @@ button.med_button:hover{
 	background-color: dodgerblue;
 	border: dodgerblue;
 	font-size: large;
+	width:15ch;
 	
 }
 
@@ -240,18 +256,24 @@ button.med_button:hover{
 }
 
 .delete_emp_box{
-	
-	padding-left: 20%;
+	margin-left:1cm ;
+	margin-right: auto;
 	
 }
 
+.new_emp_box{
+	margin-right: 1cm;
+	margin-left: auto;
+	
+	
+}
 
 
 .new_delete_box{
 	
 	display: flex;
-	padding-left: 40%;
-	margin-top: 50px;
+	/*padding-left: 40%;
+	margin-top: 50px;*/
 }
 
 .success{
@@ -261,5 +283,8 @@ button.med_button:hover{
 }
 
 
-
-
+.no_med {
+	font-size: xx-large;
+	text-align: center;
+	color: #ff6055;
+}
