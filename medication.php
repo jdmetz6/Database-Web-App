@@ -21,7 +21,7 @@ $field_names = [
 ];
 if (mysqli_num_rows($result) > 0) 
 {
-    echo "<table class=tabl>";
+    echo '<table class="tabl">';
     echo "<tr class=column>";
     // Print Column Names
     foreach ($field_names as $value) {
@@ -39,9 +39,9 @@ if (mysqli_num_rows($result) > 0)
         echo "</br>";
         echo "</tr>";
     }
-    echo "</table>";
+    echo '</table>';
     $result->free_result();
 } else {
-    echo "<h2 class='no_med'>No Medication Found</h2>";
+    echo "<h2 class='no_result'>No Medication Found</h2>";
 }
 include "footer.php";
