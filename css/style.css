@@ -156,7 +156,7 @@ span.psw {
   padding-bottom: 20px;
 }
 
-button.med_button {
+button.list_button {
   line-height: 3ch;
   background-color: dodgerblue;
   border: none;
@@ -164,7 +164,7 @@ button.med_button {
   width: 10ch;
 }
 
-button.med_button:hover {
+button.list_button:hover {
   background-color: rgb(123, 189, 255);
 }
 
@@ -207,7 +207,7 @@ button.med_button:hover {
   left: 50%;
   position: absolute;
   width: 30%;
-  top: 10%;
+  top: 18%;
   border: none;
   z-index: 9;
 }
@@ -250,7 +250,7 @@ button.med_button:hover {
   left: 50%;
   position: absolute;
   width: 30%;
-  top: 15%;
+  top: 25%;
   border: none;
   z-index: 9;
 }
@@ -285,7 +285,7 @@ button.med_button:hover {
   font-size: larger;
 }
 
-.no_med {
+.no_result {
   font-size: xx-large;
   text-align: center;
   color: #ff6055;
