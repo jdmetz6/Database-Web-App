@@ -3,11 +3,11 @@
 <?php
 $conn = db_connect($_SESSION['vali']);
 $sql = "select patient.pid, patient.fname, patient.lname, medication.medname, medication.description, employee.job_title, employee.fname, employee.lname 
-    from patient 
-    join prescriptions on prescriptions.pid = patient.pid 
-    join medication on medication.medname = prescriptions.medname
-    join employee on employee.empid = prescriptions.empid
-    where patient.pid = '" . $_POST['pid'] . "' ";
+        from patient 
+        join prescriptions on prescriptions.pid = patient.pid 
+        join medication on medication.medname = prescriptions.medname
+        join employee on employee.empid = prescriptions.empid
+        where patient.pid = '" . $_POST['pid'] . "' ";
 
 $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 $field_names = [
