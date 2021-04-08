@@ -10,7 +10,7 @@ body {
   background-color: rgb(202, 228, 255);
 }
 
-.page_title {
+.login_page_title {
   margin-top: 5%;
   text-align: center;
   font-size: xx-large;
@@ -97,6 +97,10 @@ span.psw {
 /* --------------------- OUTLINE ---------------------   */
 .menuBar {
   background-color: dodgerblue;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 .tablinks {
   padding: 10px;
@@ -133,6 +137,10 @@ span.psw {
 
 .help {
   font-size: large;
+  color: white;
+}
+
+.help:hover {
   color: rgb(214, 214, 214);
 }
 
@@ -143,18 +151,19 @@ span.psw {
   margin-right: 60px;
   float: right;
 }
+
 .title {
   text-align: center;
   padding-top: 50px;
-  font-size: xx-large;
+  font-size: 7ch;
   padding-bottom: 50px;
+  padding-top: 50px;
 }
 
 button.med_button {
-  /*padding: 50px;*/
   line-height: 3ch;
   background-color: dodgerblue;
-  border-color: dodgerblue;
+  border: none;
   font-size: large;
   width: 10ch;
 }
@@ -166,6 +175,7 @@ button.med_button:hover {
 .a {
   padding-top: 50%;
 }
+
 .tabl {
   width: 100%;
   font-size: large;
@@ -182,8 +192,6 @@ button.med_button:hover {
 .row {
   background-color: #42bdff;
 }
-
-/*  TESTING BELOW  */
 
 .new_emp_button {
   padding: 10px;
@@ -223,7 +231,7 @@ button.med_button:hover {
 .delete_emp_button:hover {
   background-color: rgb(123, 189, 255);
 }
-/*//////////////////////////*/
+
 .remove_emp_form {
   margin-left: 33%;
   margin-right: 33%;
@@ -251,8 +259,6 @@ button.med_button:hover {
 
 .new_delete_box {
   display: flex;
-  /*padding-left: 40%;
-	margin-top: 50px;*/
 }
 
 .success {
