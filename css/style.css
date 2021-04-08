@@ -1,290 +1,268 @@
 * {
-	padding: 0;
-	margin: 0;
-	font-family: Arial;
+  padding: 0;
+  margin: 0;
+  font-family: Arial;
 }
 
 /* --------------------Login page!!!----------------------------- */
 
 body {
-	background-color: rgb(202, 228, 255)
+  background-color: rgb(202, 228, 255);
 }
 
 .page_title {
-	margin-top: 5%;
-	text-align: center;
-	font-size:xx-large;
+  margin-top: 5%;
+  text-align: center;
+  font-size: xx-large;
 }
 
 .logform {
-	margin-left: 33%;
-	margin-right: 33%;
+  margin-left: 33%;
+  margin-right: 33%;
 }
 
-input[type=text],input[type=password]{
-	width: 100%;
-	padding: 12px 20px;
-	margin: 8px 0;
-	display: inline-block;
-	border: 1px solid #ccc;
-	box-sizing: border-box;
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
 }
 
 .login_button {
-	background-color: #4CAF50;
-	color: white;
-	padding: 14px 20px;
-	margin: 8px 0;
-	border: none;
-	cursor: pointer;
-	width: 100%;
-	
-  }
+  background-color: #4caf50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
 
 /* Add a hover effect for buttons */
 button:hover {
-	opacity: 0.8;
-  }
-
-  /* Extra style for the cancel button (red) */
-.cancelbtn {
-	width: auto;
-	padding: 10px 18px;
-	background-color: #f44336;
-  }
-  
-  /* Center the avatar image inside this container */
-  .imgcontainer {
-	text-align: center;
-	margin: 24px 0 12px 0;
-  }
-  
-  /* Avatar image */
-  img.avatar {
-	width: 40%;
-	border-radius: 50%;
-  }
-  
-  /* Add padding to containers */
-  .container {
-	padding: 16px;
-  }
-  
-  /* The "Forgot password" text */
-  span.psw {
-	float: right;
-	padding-top: 16px;
-  }
-  
-  /* Change styles for span and cancel button on extra small screens */
-  @media screen and (max-width: 300px) {
-	span.psw {
-	  display: block;
-	  float: none;
-	}
-	.cancelbtn {
-	  width: 100%;
-	}
-  }
-
-.wrong{
-	text-align: center;
-	font-size: 200%;
-	font-weight: 500;
-	color: red;
+  opacity: 0.8;
 }
 
+/* Extra style for the cancel button (red) */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
 
+/* Center the avatar image inside this container */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+/* Avatar image */
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+}
+
+/* The "Forgot password" text */
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+    display: block;
+    float: none;
+  }
+  .cancelbtn {
+    width: 100%;
+  }
+}
+
+.wrong {
+  text-align: center;
+  font-size: 200%;
+  font-weight: 500;
+  color: red;
+}
 
 /* --------------------- OUTLINE ---------------------   */
-.menuBar{
-	background-color: dodgerblue;
+.menuBar {
+  background-color: dodgerblue;
 }
-.tablinks{
-	padding: 10px;
-	background-color: dodgerblue;
-	border: dodgerblue;
-	font-size: x-large;
+.tablinks {
+  padding: 10px;
+  background-color: dodgerblue;
+  border: dodgerblue;
+  font-size: x-large;
 }
 
 .tablinks:hover {
-	background-color: rgb(123, 189, 255);
-	
+  background-color: rgb(123, 189, 255);
 }
 
 .logout_box {
-	float: right;
-	padding: 7px;
-	background-color: dodgerblue;
-	border: dodgerblue;
-	font-size: medium;
-	text-align: center;
+  float: right;
+  padding: 7px;
+  background-color: dodgerblue;
+  border: dodgerblue;
+  font-size: medium;
+  text-align: center;
 }
 
 .logout_button {
-	float: right;
-	padding: 7px;
-	background-color: dodgerblue;
-	border: dodgerblue;
-	font-size: medium;
-	text-align: center;
+  float: right;
+  padding: 7px;
+  background-color: dodgerblue;
+  border: dodgerblue;
+  font-size: medium;
+  text-align: center;
 }
 
 .logout_button:hover {
-	background-color: rgb(123, 189, 255);;
+  background-color: rgb(123, 189, 255);
 }
 
 .help {
-	font-size: large;
-	color:rgb(214, 214, 214);
+  font-size: large;
+  color: rgb(214, 214, 214);
 }
 
 .login_as {
-	font-size: medium;
-	font-weight: 300;
-	margin-top: 15px;
-	margin-right: 60px;
-	float: right;
+  font-size: medium;
+  font-weight: 300;
+  margin-top: 15px;
+  margin-right: 60px;
+  float: right;
 }
 .title {
-	text-align: center;
-	padding-top: 50px;
-	font-size: xx-large;
-	padding-bottom: 50px;
+  text-align: center;
+  padding-top: 50px;
+  font-size: xx-large;
+  padding-bottom: 50px;
 }
 
-button.med_button{
-	/*padding: 50px;*/
-	line-height: 3ch;
-	background-color: dodgerblue;
-	border-color: dodgerblue;
-	font-size: large;
-	width:10ch;
-	
-	
+button.med_button {
+  /*padding: 50px;*/
+  line-height: 3ch;
+  background-color: dodgerblue;
+  border-color: dodgerblue;
+  font-size: large;
+  width: 10ch;
 }
 
-button.med_button:hover{
-	background-color:rgb(123, 189, 255);
+button.med_button:hover {
+  background-color: rgb(123, 189, 255);
 }
 
-.a{
-	padding-top: 50%;
+.a {
+  padding-top: 50%;
 }
-.tabl{
-	width:100%;
-	font-size: large;
-	text-align: center;
-	margin-top: -50px;
-	line-height: 4ch;
+.tabl {
+  width: 100%;
+  font-size: large;
+  text-align: center;
+  margin-top: -50px;
+  line-height: 4ch;
 }
 
 .column {
-	font-weight: 800;
-	background-color: dodgerblue;
-	
+  font-weight: 800;
+  background-color: dodgerblue;
 }
 
-.row{
-	background-color: #42bdff;
+.row {
+  background-color: #42bdff;
 }
 
+/*  TESTING BELOW  */
 
-
-/*  TESTING BELOW  */ 
-
-.new_emp_button{
-	padding: 10px;
-	background-color: dodgerblue;
-	border: dodgerblue;
-	font-size: large;
-	width:15ch;
-	
+.new_emp_button {
+  padding: 10px;
+  background-color: dodgerblue;
+  border: dodgerblue;
+  font-size: large;
+  width: 15ch;
 }
 
-.new_emp_button:hover{
-	background-color:rgb(123, 189, 255);
-
+.new_emp_button:hover {
+  background-color: rgb(123, 189, 255);
 }
 
-.new_emp_form{
-	margin-left: 33%;
-	margin-right: 33%;
+.new_emp_form {
+  margin-left: 33%;
+  margin-right: 33%;
 }
 
-.add_emp_button{
-	background-color: #4CAF50;
-	color: white;
-	padding: 14px 20px;
-	margin: 8px 0;
-	border: none;
-	cursor: pointer;
-	width: 100%;
-	
+.add_emp_button {
+  background-color: #4caf50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
 }
 
-
-
-.delete_emp_button{
-	
-	padding: 10px;
-	background-color: dodgerblue;
-	border: dodgerblue;
-	font-size: large;
-	width:15ch;
-	
+.delete_emp_button {
+  padding: 10px;
+  background-color: dodgerblue;
+  border: dodgerblue;
+  font-size: large;
+  width: 15ch;
 }
 
-.delete_emp_button:hover{
-	background-color:rgb(123, 189, 255);
-
+.delete_emp_button:hover {
+  background-color: rgb(123, 189, 255);
 }
 /*//////////////////////////*/
-.remove_emp_form{
-	margin-left: 33%;
-	margin-right: 33%;
+.remove_emp_form {
+  margin-left: 33%;
+  margin-right: 33%;
 }
 
-.remove_emp_button{
-	background-color: #4CAF50;
-	color: white;
-	padding: 14px 20px;
-	margin: 8px 0;
-	border: none;
-	cursor: pointer;
-	width: 100%;
+.remove_emp_button {
+  background-color: #4caf50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
 }
 
-.delete_emp_box{
-	margin-left:1cm ;
-	margin-right: auto;
-	
+.delete_emp_box {
+  margin-left: 1cm;
+  margin-right: auto;
 }
 
-.new_emp_box{
-	margin-right: 1cm;
-	margin-left: auto;
-	
-	
+.new_emp_box {
+  margin-right: 1cm;
+  margin-left: auto;
 }
 
-
-.new_delete_box{
-	
-	display: flex;
-	/*padding-left: 40%;
+.new_delete_box {
+  display: flex;
+  /*padding-left: 40%;
 	margin-top: 50px;*/
 }
 
-.success{
-	text-align: center;
-	margin-bottom: -25px;
-	font-size:larger;
+.success {
+  text-align: center;
+  margin-bottom: -25px;
+  font-size: larger;
 }
 
-
 .no_med {
-	font-size: xx-large;
-	text-align: center;
-	color: #ff6055;
+  font-size: xx-large;
+  text-align: center;
+  color: #ff6055;
 }
