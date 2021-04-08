@@ -19,7 +19,8 @@ $field_names = [
     '',
     ''
 ];
-if (mysqli_num_rows($result) > 0) {
+if (mysqli_num_rows($result) > 0) 
+{
     echo "<table class=tabl>";
     echo "<tr class=column>";
     // Print Column Names
