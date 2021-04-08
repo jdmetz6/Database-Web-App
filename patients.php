@@ -2,7 +2,8 @@
 <h1 class="title">Patient Information</h1>
 <?php
 $conn = db_connect($_SESSION['vali']);
-$sql = 'select * from patient;';
+$sql = 'select * 
+        from patient;';
 $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
 $field_names = [
