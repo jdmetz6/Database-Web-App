@@ -96,12 +96,14 @@ span.psw {
 
 /* --------------------- OUTLINE ---------------------   */
 .menuBar {
+  display: flex;
   background-color: dodgerblue;
   overflow: hidden;
   position: fixed;
   top: 0;
   width: 100%;
 }
+
 .tablinks {
   padding: 10px;
   background-color: dodgerblue;
@@ -113,43 +115,37 @@ span.psw {
   background-color: rgb(123, 189, 255);
 }
 
-.logout_box {
-  float: right;
-  padding: 7px;
+.log_out_button {
+  height: 100%;
+  width: 10ch;
   background-color: dodgerblue;
   border: dodgerblue;
-  font-size: medium;
-  text-align: center;
+  font-size: large;
 }
 
-.logout_button {
-  float: right;
-  padding: 7px;
-  background-color: dodgerblue;
-  border: dodgerblue;
-  font-size: medium;
-  text-align: center;
-}
-
-.logout_button:hover {
+.log_out_button:hover {
   background-color: rgb(123, 189, 255);
 }
 
 .help {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 10ch;
+  margin-right: 2ch;
   font-size: large;
   color: white;
 }
 
 .help:hover {
-  color: rgb(214, 214, 214);
+  color: rgb(176, 176, 176);
 }
 
 .login_as {
-  font-size: medium;
+  margin-left: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: large;
   font-weight: 300;
-  margin-top: 15px;
-  margin-right: 60px;
-  float: right;
 }
 
 .title {
@@ -157,7 +153,6 @@ span.psw {
   padding-top: 50px;
   font-size: 7ch;
   padding-bottom: 50px;
-  padding-top: 50px;
 }
 
 button.med_button {
