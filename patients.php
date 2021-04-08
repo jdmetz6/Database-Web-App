@@ -34,7 +34,7 @@ while ($row = mysqli_fetch_array($result)) {
         echo "<td>" . $row[$x] . "</td>";
     }
     echo '<td><form class="med" method="post" action="medication.php">';
-    echo '<button class="med_button" type="submit" value="' . $i . '" name="pid">List</button>';
+    echo '<button class="list_button" type="submit" value="' . $i . '" name="pid">List</button>';
     echo '</form></td>';
     echo '</br>';
     echo '</tr>';
