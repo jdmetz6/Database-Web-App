@@ -16,7 +16,7 @@ $field_names = [
     'Time'
 ];
 if (mysqli_num_rows($result) > 0) {
-    echo '<table class="tabl">';
+    echo '<table class=tabl>';
     echo '<tr class=column>';
     // Print Column Names
     foreach ($field_names as $value) {
