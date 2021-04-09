@@ -73,7 +73,7 @@ function new_emp_form($connec)
                     </div>  
                 </div>
                 <div class="form_buttons">
-                    <button class="add_emp_button" type="submit" name="new_emp_submit">Submit</button>
+                    <button class="submit_add_emp_button" type="submit" name="new_emp_submit">Submit</button>
                     <button class="cancel_emp_button" action="employee.php">Cancel</button>
                 </div>
             </form>';
@@ -116,7 +116,7 @@ function delete_emp_form($connec)
                     </div>
                     
                     <div class="form_buttons">
-                        <button class="remove_emp_button" type="submit" name="remove_emp_submit">Submit</button>
+                        <button class="submit_delete_emp_button" type="submit" name="remove_emp_submit">Submit</button>
                         <button class="cancel_emp_button" action="employee.php">Cancel</button>
                     </div>
                 </form>';
