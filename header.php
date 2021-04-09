@@ -12,16 +12,19 @@ logout_button();
 
 <body>
     <div class="menuBar">
-        <button class="tablinks" onclick="window.location.href='employees.php';">Employees</button>
-        <button class="tablinks" onclick="window.location.href='patients.php';">Patients</button>
-        <button class="tablinks" onclick="window.location.href='appointments.php';">Appointments</button>
-        <button class="tablinks" onclick="window.location.href='occupied_rooms.php';">Rooms</button>
-    
+        <div class="logo_box">
+            <a href="employees.php"><img class="logo" src="images/logo.jpg" alt="heart"></a>
+        </div>
+        <div class="tabs">
+            <button class="tablinks" onclick="window.location.href='employees.php';">Employees</button>
+            <button class="tablinks" onclick="window.location.href='patients.php';">Patients</button>
+            <button class="tablinks" onclick="window.location.href='appointments.php';">Appointments</button>
+            <button class="tablinks" onclick="window.location.href='occupied_rooms.php';">Rooms</button>
+        </div>
         <p class="login_as">Logged in as: <?php echo '       ';
                                             print($_SESSION['user']); ?></p>
-                                
+
         <a class="help" href="https://github.com/jdmetz6/Database-Web-App/wiki" target="_blank"> Help</a>
-    
         <form method="POST">
             <button class="log_out_button" type="submit" name="logout">Logout</button>
         </form>
