@@ -218,9 +218,14 @@ button.list_button:hover {
   padding-top: 50%;
 }
 
+.tabl_box {
+  display: flex;
+  justify-content: center;
+}
+
 .tabl {
   border-collapse: collapse;
-  width: 100%;
+  width: 97%;
   font-size: large;
   text-align: center;
   line-height: 7ch;
@@ -368,6 +373,7 @@ button.list_button:hover {
 
 .new_delete_box {
   display: flex;
+  margin-bottom: 2%;
 }
 
 .success {
