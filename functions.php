@@ -46,27 +46,33 @@ function new_emp_form($connec)
 {
     if (isset($_POST['new_emp_button'])) {
         echo  '<form class="new_emp_form" method="POST">
-                <div class="container">
-                    <label for="id"><b>ID</b></label>
-                    <input type="text" placeholder="Enter ID Number" name="id" value="" require>
-                    <label for="fname"><b>Fist Name</b></label>
-                    <input type="text" placeholder="Enter First Name" name="fname" value="" require>
-                    <label for="lname"><b>Last Name</b></label>
-                    <input type="text" placeholder="Enter Last Name" name="lname" value="" require>
-                    <label for="bday"><b>Birthday</b></label>
-                    <input type="text" placeholder="Enter Birthday" name="bday" value="" require>
-                    <label for="sex"><b>Gender</b></label>
-                    <input type="text" placeholder="Enter Gender" name="sex" value="" require>
-                    <label for="address"><b>Address</b></label>
-                    <input type="text" placeholder="Enter Address" name="address" value="" require>
-                    <label for="phone"><b>Phone Number</b></label>
-                    <input type="text" placeholder="Enter Phone Number" name="phone" value="" require>
-                    <label for="title"><b>Job Title</b></label>
-                    <input type="text" placeholder="Enter Job Title" name="title" value="" require>
-                    <label for="salary"><b>Salary</b></label>
-                    <input type="text" placeholder="Enter Salary" name="salary" value="" require>
-                    <label for="hiredate"><b>Hire Date</b></label>
-                    <input type="text" placeholder="Enter Hire Date" name="hiredate" value="" require>
+                <div class="container1">
+                    <div class="container2">
+                        <label for="id"><b>ID</b></label>
+                        <input type="text" placeholder="Enter ID Number" name="id" value="" require>
+                        <label for="fname"><b>Fist Name</b></label>
+                        <input type="text" placeholder="Enter First Name" name="fname" value="" require>
+                        <label for="lname"><b>Last Name</b></label>
+                        <input type="text" placeholder="Enter Last Name" name="lname" value="" require>
+                        <label for="bday"><b>Birthday</b></label>
+                        <input type="text" placeholder="Enter Birthday" name="bday" value="" require>
+                        <label for="sex"><b>Gender</b></label>
+                        <input type="text" placeholder="Enter Gender" name="sex" value="" require>
+                    </div>
+                    <div class="container2">    
+                        <label for="address"><b>Address</b></label>
+                        <input type="text" placeholder="Enter Address" name="address" value="" require>
+                        <label for="phone"><b>Phone Number</b></label>
+                        <input type="text" placeholder="Enter Phone Number" name="phone" value="" require>
+                        <label for="title"><b>Job Title</b></label>
+                        <input type="text" placeholder="Enter Job Title" name="title" value="" require>
+                        <label for="salary"><b>Salary</b></label>
+                        <input type="text" placeholder="Enter Salary" name="salary" value="" require>
+                        <label for="hiredate"><b>Hire Date</b></label>
+                        <input type="text" placeholder="Enter Hire Date" name="hiredate" value="" require>
+                    </div>  
+                </div>
+                <div class="form_buttons">
                     <button class="add_emp_button" type="submit" name="new_emp_submit">Submit</button>
                     <button class="cancel_emp_button" action="employee.php">Cancel</button>
                 </div>
@@ -102,13 +108,18 @@ function delete_emp_form($connec)
     if (isset($_POST['delete_emp_button'])) {
 
         echo  '<form class="remove_emp_form" method="POST">
-                    <div class="container">
+                    <div class="container1">
+                    <div class="container2">
                         <label for="id"><b>ID</b></label>
                         <input type="text" placeholder="Enter ID Number To Delete" name="delete_id" value="" require>
+                    </div>
+                    </div>
+                    
+                    <div class="form_buttons">
                         <button class="remove_emp_button" type="submit" name="remove_emp_submit">Submit</button>
                         <button class="cancel_emp_button" action="employee.php">Cancel</button>
                     </div>
-                 </form>';
+                </form>';
     }
 
     if (isset($_POST['remove_emp_submit'])) {
