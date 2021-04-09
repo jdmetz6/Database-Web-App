@@ -18,17 +18,18 @@
     ?>
     <h2 class="login_page_title">Hospital Database Login</h2>
     <form class="logform" method="POST">
-        <div class="container">
+        <div class="login_container">
             <label for="user"><b>Username</b></label>
             <input type="text" placeholder="Enter Username" name="user" require>
             <label for="pass"><b>Password</b></label>
             <input type="password" placeholder="Enter Password" name="pass" require>
+        </div>
+        <div class="form_buttons">
             <button class="login_button" type="submit">Submit</button>
         </div>
     </form>
     <?php
-    if (isset($_POST['user']) && isset($_POST['pass'])) 
-    {
+    if (isset($_POST['user']) && isset($_POST['pass'])) {
         login($_POST['user'], $_POST['pass'], $servername, $username, $password, $validation);
     }
     ?>
