@@ -34,30 +34,31 @@ $field_names = [
     'Hire Date',
     'Patients'
 ];
-
-echo '<table class=tabl>';
-echo '<tr class=column>';
-// Print Column Names
-foreach ($field_names as $value) {
-    echo '<td>' . $value . '</td>';
-}
-echo '</tr>';
-
-// Print Data
-$fieldNum = mysqli_num_fields($result);
-while ($row = mysqli_fetch_array($result)) {
-    $i = $row[0];
-    echo "<tr class=row>";
-    for ($x = 0; $x < $fieldNum; $x++) {
-        echo "<td>" . $row[$x] . "</td>";
+echo '<div class="tabl_box">';
+    echo '<table class=tabl>';
+    echo '<tr class=column>';
+    // Print Column Names
+    foreach ($field_names as $value) {
+        echo '<td>' . $value . '</td>';
     }
-    echo '<td><form class="assign" method="post" action="doctor_patient_assignment.php">';
-    echo '<button class="list_button" type="submit" value="' . $i . '" name="empid">List</button>';
-    echo '</form></td>';
-    echo "</br>";
-    echo "</tr>";
-}
-echo '</table>';
+    echo '</tr>';
+
+    // Print Data
+    $fieldNum = mysqli_num_fields($result);
+    while ($row = mysqli_fetch_array($result)) {
+        $i = $row[0];
+        echo "<tr class=row>";
+        for ($x = 0; $x < $fieldNum; $x++) {
+            echo "<td>" . $row[$x] . "</td>";
+        }
+        echo '<td><form class="assign" method="post" action="doctor_patient_assignment.php">';
+        echo '<button class="list_button" type="submit" value="' . $i . '" name="empid">List</button>';
+        echo '</form></td>';
+        echo "</br>";
+        echo "</tr>";
+    }
+    echo '</table>';
+echo '</div>';
 $result->free_result();
 ?>
 <?php include 'footer.php'; ?>
