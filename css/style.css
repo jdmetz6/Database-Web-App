@@ -12,23 +12,37 @@ body {
 
 .login_page_title {
   margin-top: 5%;
+  margin-bottom: 2%;
   text-align: center;
   font-size: xx-large;
 }
 
 .logform {
-  margin-left: 33%;
-  margin-right: 33%;
+  -webkit-box-shadow: 0px 6px 25px 2px rgba(0, 0, 0, 0.53);
+  box-shadow: 0px 6px 25px 2px rgba(0, 0, 0, 0.53);
+  -webkit-border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+  background-color: #42bdff;
+  width: 30%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 7px;
+}
+
+.login_container {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 
 input[type="text"],
 input[type="password"] {
   width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
+  height: 5ch;
+  border: none;
 }
 
 .login_button {
@@ -38,7 +52,14 @@ input[type="password"] {
   margin: 8px 0;
   border: none;
   cursor: pointer;
-  width: 100%;
+  width: 15ch;
+  display: flex;
+  justify-content: center;
+  -webkit-box-shadow: 0px 6px 25px 2px rgba(0, 0, 0, 0.31);
+  box-shadow: 0px 6px 25px 2px rgba(0, 0, 0, 0.31);
+  -webkit-border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
 }
 
 /* Add a hover effect for buttons */
@@ -66,8 +87,14 @@ img.avatar {
 }
 
 /* Add padding to containers */
-.container {
+
+.container1 {
+  display: flex;
+  justify-content: center;
+}
+.container2 {
   padding: 16px;
+  width: 40%;
 }
 
 /* The "Forgot password" text */
@@ -88,6 +115,7 @@ span.psw {
 }
 
 .wrong {
+  margin-top: 2%;
   text-align: center;
   font-size: 200%;
   font-weight: 500;
@@ -103,6 +131,8 @@ span.psw {
   top: 0;
   width: 100%;
   z-index: 10;
+  -webkit-box-shadow: 0px 6px 25px 2px rgba(0, 0, 0, 0.53);
+  box-shadow: 0px 6px 25px 2px rgba(0, 0, 0, 0.53);
 }
 
 .tablinks {
@@ -110,6 +140,10 @@ span.psw {
   background-color: dodgerblue;
   border: dodgerblue;
   font-size: x-large;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
 }
 
 .tablinks:hover {
@@ -122,6 +156,10 @@ span.psw {
   background-color: dodgerblue;
   border: dodgerblue;
   font-size: large;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
 }
 
 .log_out_button:hover {
@@ -135,10 +173,11 @@ span.psw {
   margin-right: 2ch;
   font-size: large;
   color: white;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .help:hover {
-  color: rgb(176, 176, 176);
+  color: rgb(123, 189, 255);
 }
 
 .login_as {
@@ -147,6 +186,7 @@ span.psw {
   margin-bottom: auto;
   font-size: large;
   font-weight: 300;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .title {
@@ -154,6 +194,7 @@ span.psw {
   padding-top: 120px;
   font-size: 7ch;
   padding-bottom: 20px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 button.list_button {
@@ -161,7 +202,12 @@ button.list_button {
   background-color: dodgerblue;
   border: none;
   font-size: large;
-  width: 10ch;
+  width: 8ch;
+  -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.16);
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.16);
+  -webkit-border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
 }
 
 button.list_button:hover {
@@ -173,20 +219,24 @@ button.list_button:hover {
 }
 
 .tabl {
+  border-collapse: collapse;
   width: 100%;
   font-size: large;
   text-align: center;
-  margin-top: -50px;
-  line-height: 4ch;
+  line-height: 7ch;
+  -webkit-box-shadow: 0px 6px 25px 2px rgba(0, 0, 0, 0.53);
+  box-shadow: 0px 6px 25px 2px rgba(0, 0, 0, 0.53);
 }
 
 .column {
   font-weight: 800;
   background-color: dodgerblue;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .row {
   background-color: #42bdff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .new_emp_button {
@@ -195,6 +245,11 @@ button.list_button:hover {
   border: dodgerblue;
   font-size: large;
   width: 15ch;
+  -webkit-box-shadow: 0px 6px 25px 2px rgba(0, 0, 0, 0.31);
+  box-shadow: 0px 6px 25px 2px rgba(0, 0, 0, 0.31);
+  -webkit-border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
 }
 
 .new_emp_button:hover {
@@ -202,7 +257,7 @@ button.list_button:hover {
 }
 
 .new_emp_form {
-  background-color: #3180fe;
+  background-color: #42bdff;
   transform: translate(-50%, 5%);
   left: 50%;
   position: absolute;
@@ -210,26 +265,41 @@ button.list_button:hover {
   top: 18%;
   border: none;
   z-index: 9;
+  -webkit-box-shadow: 0px 6px 25px 2px rgba(0, 0, 0, 0.53);
+  box-shadow: 0px 6px 25px 2px rgba(0, 0, 0, 0.53);
+  -webkit-border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
 }
 
 .add_emp_button {
   background-color: #4caf50;
   color: white;
   padding: 14px 20px;
-  margin: 8px 0;
+  margin-right: 5px;
   border: none;
   cursor: pointer;
   width: 40%;
+  -webkit-box-shadow: 0px 6px 25px 2px rgba(0, 0, 0, 0.31);
+  box-shadow: 0px 6px 25px 2px rgba(0, 0, 0, 0.31);
+  -webkit-border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
 }
 
 .cancel_emp_button {
   background-color: #f83c3c;
   color: white;
   padding: 14px 20px;
-  margin: 8px 0;
+  margin-left: 5px;
   border: none;
   cursor: pointer;
   width: 40%;
+  -webkit-box-shadow: 0px 6px 25px 2px rgba(0, 0, 0, 0.31);
+  box-shadow: 0px 6px 25px 2px rgba(0, 0, 0, 0.31);
+  -webkit-border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
 }
 
 .delete_emp_button {
@@ -238,6 +308,11 @@ button.list_button:hover {
   border: dodgerblue;
   font-size: large;
   width: 15ch;
+  -webkit-box-shadow: 0px 6px 25px 2px rgba(0, 0, 0, 0.31);
+  box-shadow: 0px 6px 25px 2px rgba(0, 0, 0, 0.31);
+  -webkit-border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
 }
 
 .delete_emp_button:hover {
@@ -245,24 +320,40 @@ button.list_button:hover {
 }
 
 .remove_emp_form {
-  background-color: #3180fe;
+  background-color: #42bdff;
   transform: translate(-50%, 5%);
   left: 50%;
   position: absolute;
   width: 30%;
-  top: 25%;
+  top: 20%;
   border: none;
   z-index: 9;
+  -webkit-box-shadow: 0px 6px 25px 2px rgba(0, 0, 0, 0.53);
+  box-shadow: 0px 6px 25px 2px rgba(0, 0, 0, 0.53);
+  -webkit-border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
 }
 
 .remove_emp_button {
   background-color: #4caf50;
   color: white;
   padding: 14px 20px;
-  margin: 8px 0;
+  margin-right: 5px;
   border: none;
   cursor: pointer;
   width: 40%;
+  -webkit-box-shadow: 0px 6px 25px 2px rgba(0, 0, 0, 0.31);
+  box-shadow: 0px 6px 25px 2px rgba(0, 0, 0, 0.31);
+  -webkit-border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+}
+
+.form_buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
 }
 
 .delete_emp_box {
