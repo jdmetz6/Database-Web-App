@@ -11,26 +11,31 @@
 <body>
     <?php
     include 'functions.php';
-    $servername = "localhost";
-    $username = "root";
-    $password = "1121";
+    $login_username = "username";
+    $login_password = "password";
     $validation = FALSE;
     ?>
     <h2 class="login_page_title">Hospital Database Login</h2>
     <form class="logform" method="POST">
         <div class="login_container">
             <label for="user"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="user" require>
+            <input type="text" placeholder="Enter Username" name="username" require>
             <label for="pass"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="pass" require>
+            <input type="password" placeholder="Enter Password" name="user_password" require>
         </div>
         <div class="form_buttons">
             <button class="login_button" type="submit">Submit</button>
         </div>
     </form>
     <?php
-    if (isset($_POST['user']) && isset($_POST['pass'])) {
-        login($_POST['user'], $_POST['pass'], $servername, $username, $password, $validation);
+    if (isset($_POST['username']) && isset($_POST['user_password'])) {
+        if ($_POST['username'] == $login_username && $_POST['user_password'] == $login_password) {
+            $_SESSION['validation'] = $validation = TRUE;
+            $_SESSION['username'] = "$login_username";
+            header("Location: employees.php");
+        } else {
+            echo '<p class="wrong">Wrong Username/Password</p>';
+        }
     }
     ?>
 </body>
