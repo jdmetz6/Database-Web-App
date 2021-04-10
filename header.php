@@ -6,6 +6,12 @@ logout_button();
 <html lang="en">
 
 <head>
+    <title id="title">Hospital</title>
+    <script>
+        function title() {
+            document.getElementById("title").innerHTML = document.getElementById("tab_title").innerText;
+        }
+    </script>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
@@ -20,6 +26,7 @@ logout_button();
             <button class="tablinks" onclick="window.location.href='patients.php';">Patients</button>
             <button class="tablinks" onclick="window.location.href='appointments.php';">Appointments</button>
             <button class="tablinks" onclick="window.location.href='occupied_rooms.php';">Rooms</button>
+            <button class="tablinks" onclick="window.location.href='medication.php';">Medication</button>
         </div>
         <p class="login_as">Logged in as: <?php echo '       ';
                                             print($_SESSION['user']); ?></p>
