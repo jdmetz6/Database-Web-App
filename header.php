@@ -29,7 +29,7 @@ logout_button();
             <button class="tablinks" onclick="window.location.href='medication.php';">Medication</button>
         </div>
         <p class="login_as">Logged in as: <?php echo '       ';
-                                            print($_SESSION['user']); ?></p>
+                                            print($_SESSION['username']); ?></p>
         <a class="help" href="https://github.com/jdmetz6/Database-Web-App/wiki" target="_blank"> Help</a>
         <form method="POST">
             <button class="log_out_button" type="submit" name="logout">Logout</button>
