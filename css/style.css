@@ -285,7 +285,7 @@ button.list_button:hover {
   left: 50%;
   position: absolute;
   width: 30%;
-  top: 18%;
+  top: 22%;
   border: none;
   z-index: 9;
   -webkit-box-shadow: 0px 6px 25px 2px rgba(0, 0, 0, 0.53);
@@ -293,6 +293,7 @@ button.list_button:hover {
   -webkit-border-radius: 10px 10px 10px 10px;
   -moz-border-radius: 10px 10px 10px 10px;
   border-radius: 10px 10px 10px 10px;
+  animation: myAnim 300ms ease 0s 1 normal forwards;
 }
 
 ::-webkit-input-placeholder {
@@ -363,7 +364,7 @@ input {
   left: 50%;
   position: absolute;
   width: 30%;
-  top: 20%;
+  top: 24%;
   border: none;
   z-index: 9;
   -webkit-box-shadow: 0px 6px 25px 2px rgba(0, 0, 0, 0.53);
@@ -371,6 +372,17 @@ input {
   -webkit-border-radius: 10px 10px 10px 10px;
   -moz-border-radius: 10px 10px 10px 10px;
   border-radius: 10px 10px 10px 10px;
+  animation: myAnim 300ms ease 0s 1 normal forwards;
+}
+
+@keyframes myAnim {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 .submit_delete_emp_button {
