@@ -4,7 +4,7 @@
     title()
 </script>
 <?php
-$conn = db_connect($_SESSION['vali']);
+$conn = db_connect($_SESSION['validation']);
 $sql = 'select patient.pid, patient.fname, patient.lname, room.room_type, room.room_number 
         from patient 
         join assign_room ON patient.pid = assign_room.pid 
