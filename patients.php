@@ -4,7 +4,7 @@
     title()
 </script>
 <?php
-$conn = db_connect($_SESSION['vali']);
+$conn = db_connect($_SESSION['validation']);
 $sql = 'select * 
         from patient;';
 $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
