@@ -1,49 +1,18 @@
 <?php include "header.php"; ?>
-<h1 class="title">Prescribed Medication</h1>
+<h1 id="tab_title" class="title">Medication</h1>
+<script>
+    title()
+</script>
 <?php
 $conn = db_connect($_SESSION['vali']);
-$sql = "select patient.pid, patient.fname, patient.lname, medication.medname, medication.description, employee.job_title, employee.fname, employee.lname 
-        from patient 
-        join prescriptions on prescriptions.pid = patient.pid 
-        join medication on medication.medname = prescriptions.medname
-        join employee on employee.empid = prescriptions.empid
-        where patient.pid = '" . $_POST['pid'] . "' ";
+$sql = "select * from medication;";
 
 $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 $field_names = [
-    'Patient First Name',
-    'Patient Last Name',
-    'Medication',
-    'Description',
-    'Prescribed By:',
-    '',
-    ''
+    'Name',
+    'Price',
+    'Count',
+    'Description'
 ];
-if (mysqli_num_rows($result) > 0) 
-{
-    echo '<div class="tabl_box">';
-        echo '<table class="tabl">';
-        echo "<tr class=column>";
-        // Print Column Names
-        foreach ($field_names as $value) {
-            echo "<td>" . $value . "</td>";
-        }
-        echo "</tr>";
-
-        // Print Data
-        $fieldNum = mysqli_num_fields($result);
-        while ($row = mysqli_fetch_array($result)) {
-            echo "<tr class=row>";
-            for ($x = 1; $x < $fieldNum; $x++) {
-                echo "<td>" . $row[$x] . "</td>";
-            }
-            echo "</br>";
-            echo "</tr>";
-        }
-        echo '</table>';
-    echo '</table>';
-    $result->free_result();
-} else {
-    echo "<h2 class='no_result'>No Medication Found</h2>";
-}
+print_results($field_names, $result, $conn);
 include "footer.php";
