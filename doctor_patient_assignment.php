@@ -4,7 +4,7 @@
     title()
 </script>
 <?php
-$conn = db_connect($_SESSION['vali']);
+$conn = db_connect($_SESSION['validation']);
 $sql = "select patient.pid, patient.fname, patient.lname, appointment.date, appointment.time  
     from patient, appointment
     where  patient.pid=appointment.pid and appointment.empid = '" . $_POST['empid'] . "' ";
