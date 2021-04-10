@@ -1,4 +1,3 @@
-
 <?php
 // Validate & Login 
 function login($user, $pass, $servername, $username, $password, $validation)
@@ -134,4 +133,47 @@ function delete_emp_form($connec)
             echo mysqli_errno($connec) . ": " . mysqli_error($connec) . "\n";
         }
     }
+}
+
+function print_results($field_names, $result, $conn)
+{
+    echo '<div class="tabl_box">';
+    echo '<table class=tabl>';
+    echo '<tr class=column>';
+    // Print Column Names
+    foreach ($field_names as $value) {
+        echo '<td>' . $value . '</td>';
+    }
+    echo '</tr>';
+    // Print Data
+    $fieldNum = mysqli_num_fields($result);
+    $index = 0;
+    if ("prescriptions.php" == basename($_SERVER['PHP_SELF'])) {
+        $index = 1;
+    }
+    while ($row = mysqli_fetch_array($result)) {
+        $id = $row[0];
+        echo "<tr class=row>";
+        for ($x = $index; $x < $fieldNum; $x++) {
+            echo "<td>" . $row[$x] . "</td>";
+        }
+
+        if ("employees.php" == basename($_SERVER['PHP_SELF'])) {
+            echo '<td><form class="assign" method="post" action="doctor_patient_assignment.php">';
+            echo '<button class="list_button" type="submit" value="' . $id . '" name="empid">List</button>';
+            echo '</form></td>';
+        }
+
+        if ("patients.php" == basename($_SERVER['PHP_SELF'])) {
+            echo '<td><form class="assign" method="post" action="prescriptions.php">';
+            echo '<button class="list_button" type="submit" value="' . $id . '" name="pid">List</button>';
+            echo '</form></td>';
+        }
+        echo "</br>";
+        echo "</tr>";
+    }
+    echo '</table>';
+    echo '</div>';
+    $result->free_result();
+    $conn->close();
 }
