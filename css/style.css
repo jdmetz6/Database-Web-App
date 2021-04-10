@@ -8,6 +8,7 @@
 
 body {
   background-color: #31708e;
+  padding-bottom: 50px;
 }
 
 .login_page_title {
@@ -137,15 +138,9 @@ span.psw {
   box-shadow: 0px 6px 25px 2px rgba(0, 0, 0, 0.53);
 }
 
-.logo_box {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-}
-
 .logo {
   width: 50px;
-  height: 100%;
+  height: 80%;
   border-radius: 50%;
   margin: 5px 20px 0px 20px;
 }
@@ -194,7 +189,7 @@ span.psw {
 }
 
 .help:hover {
-  color: rgb(123, 189, 255);
+  color: #31708e;
 }
 
 .login_as {
@@ -431,4 +426,50 @@ input {
   font-size: xx-large;
   text-align: center;
   color: #ff6055;
+}
+
+a {
+  text-decoration: none;
+}
+
+.bottom_foot {
+  background-color: #5e9cc3;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  z-index: 10;
+  -webkit-box-shadow: 0px 6px 25px 2px rgba(0, 0, 0, 0.53);
+  box-shadow: 0px 6px 25px 2px rgba(0, 0, 0, 0.53);
+}
+
+.content_box {
+  display: flex;
+  padding: 0 100px;
+}
+
+.footer_message_box {
+  height: 100%;
+}
+
+.footer_message {
+  color: #f7f9fb;
+  margin-top: 10px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.footer_message:hover {
+  color: #31708e;
+}
+
+.github_logo_box {
+  margin-left: 10px;
+}
+
+.github_logo {
+  width: 40px;
+  height: 80%;
+  border-radius: 50%;
+  margin: 5px 20px 0px 20px;
 }
