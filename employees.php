@@ -17,7 +17,7 @@
 </div>
 <?php
 
-$conn = db_connect($_SESSION['vali']);
+$conn = db_connect($_SESSION['validation']);
 new_emp_form($conn);
 delete_emp_form($conn);
 
