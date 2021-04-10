@@ -1,42 +1,29 @@
 <?php
-// Validate & Login 
-function login($user, $pass, $servername, $username, $password, $validation)
-{
-    if ($username != $user || $password != $pass) {
-        echo '<p class="wrong">Wrong Username/Password</p>';
-    } else {
-        $validation = TRUE;
-        $_SESSION['serv'] = "$servername";
-        $_SESSION['user'] = "$username";
-        $_SESSION['pass'] = "$password";
-        $_SESSION['vali'] = "$validation";
-        header("Location: employees.php");
-    }
-    return 0;
-}
-
 function logout_button()
 {
     if (isset($_POST['logout'])) {
         session_destroy();
         header("Location: index.php");
-        $_SESSION['vali'] = FALSE;
+        $_SESSION['validation'] = FALSE;
     }
 }
 
 function db_connect($validation)
 {
+    $db_host_name = "localhost";
+    $db_username = "root";
+    $db_user_password = "1121";
+    $db_name = "dbapp";
+
     if ($validation == FALSE || empty($validation)) {
         header("Location: index.php");
         return 0;
     } else {
-        $connection = new mysqli($_SESSION['serv'], $_SESSION['user'], $_SESSION['pass']);
+        $connection = new mysqli($db_host_name, $db_username, $db_user_password, $db_name);
     }
     // Check connection
     if ($connection->connect_error) {
         die("Failed: " . $connection->connect_error);
-    } else {
-        mysqli_query($connection, 'USE dbapp') or die(mysqli_error($connection));
     }
     return $connection;
 }
