@@ -7,7 +7,7 @@
 /* --------------------Login page!!!----------------------------- */
 
 body {
-  background-color: rgb(202, 228, 255);
+  background-color: #31708e;
 }
 
 .login_page_title {
@@ -15,6 +15,8 @@ body {
   margin-bottom: 2%;
   text-align: center;
   font-size: xx-large;
+  color: #f7f9fb;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .logform {
@@ -23,7 +25,7 @@ body {
   -webkit-border-radius: 10px 10px 10px 10px;
   -moz-border-radius: 10px 10px 10px 10px;
   border-radius: 10px 10px 10px 10px;
-  background-color: #42bdff;
+  background-color: #f7f9fb;
   width: 30%;
   display: block;
   margin-left: auto;
@@ -46,7 +48,7 @@ input[type="password"] {
 }
 
 .login_button {
-  background-color: #4caf50;
+  background-color: dodgerblue;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -125,7 +127,7 @@ span.psw {
 /* --------------------- OUTLINE ---------------------   */
 .menuBar {
   display: flex;
-  background-color: dodgerblue;
+  background-color: #5e9cc3;
   overflow: hidden;
   position: fixed;
   top: 0;
@@ -151,8 +153,8 @@ span.psw {
 .tablinks {
   height: 100%;
   padding: 15px;
-  background-color: dodgerblue;
-  border: dodgerblue;
+  background-color: #5e9cc3;
+  border: none;
   font-size: x-large;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   -webkit-border-radius: 10px 10px 10px 10px;
@@ -161,15 +163,15 @@ span.psw {
 }
 
 .tablinks:hover {
-  background-color: rgb(123, 189, 255);
+  background-color: #31708e;
 }
 
 .log_out_button {
   height: 100%;
   width: 10ch;
   margin-right: 20px;
-  background-color: dodgerblue;
-  border: dodgerblue;
+  background-color: #5e9cc3;
+  border: none;
   font-size: large;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   -webkit-border-radius: 10px 10px 10px 10px;
@@ -178,7 +180,7 @@ span.psw {
 }
 
 .log_out_button:hover {
-  background-color: rgb(123, 189, 255);
+  background-color: #31708e;
 }
 
 .help {
@@ -187,7 +189,7 @@ span.psw {
   margin-left: 10ch;
   margin-right: 2ch;
   font-size: large;
-  color: white;
+  color: #f7f9fb;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -209,12 +211,13 @@ span.psw {
   padding-top: 120px;
   font-size: 7ch;
   padding-bottom: 20px;
+  color: #f7f9fb;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 button.list_button {
   line-height: 3ch;
-  background-color: dodgerblue;
+  background-color: #5e9cc3;
   border: none;
   font-size: large;
   width: 8ch;
@@ -226,7 +229,7 @@ button.list_button {
 }
 
 button.list_button:hover {
-  background-color: rgb(123, 189, 255);
+  background-color: #31708e;
 }
 
 .a {
@@ -250,19 +253,19 @@ button.list_button:hover {
 }
 
 .column {
-  background-color: dodgerblue;
+  background-color: #5e9cc3;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .row {
-  background-color: #42bdff;
+  background-color: #8fc1e3;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .new_emp_button {
   padding: 10px;
-  background-color: dodgerblue;
-  border: dodgerblue;
+  background-color: #5e9cc3;
+  border: none;
   font-size: large;
   width: 15ch;
   -webkit-box-shadow: 0px 6px 25px 2px rgba(0, 0, 0, 0.31);
@@ -273,11 +276,11 @@ button.list_button:hover {
 }
 
 .new_emp_button:hover {
-  background-color: rgb(123, 189, 255);
+  background-color: #31708e;
 }
 
 .new_emp_form {
-  background-color: #42bdff;
+  background-color: #f7f9fb;
   transform: translate(-50%, 5%);
   left: 50%;
   position: absolute;
@@ -299,11 +302,12 @@ button.list_button:hover {
 input {
   margin-top: 20px;
   margin-bottom: 20px;
-  -webkit-box-shadow: 0px 6px 25px 2px rgba(0, 0, 0, 0.53);
-  box-shadow: 0px 6px 25px 2px rgba(0, 0, 0, 0.53);
+  color: black;
   -webkit-border-radius: 10px 10px 10px 10px;
   -moz-border-radius: 10px 10px 10px 10px;
   border-radius: 10px 10px 10px 10px;
+  -webkit-box-shadow: 5px 5px 46px 6px rgba(0, 0, 0, 0.24);
+  box-shadow: 5px 5px 46px 6px rgba(0, 0, 0, 0.24);
 }
 
 .submit_add_emp_button {
@@ -323,7 +327,7 @@ input {
 
 .cancel_emp_button {
   background-color: none;
-  color: rgb(112, 112, 112);
+  color: black;
   padding: 14px 20px;
   margin-left: 5px;
   border: none;
@@ -338,8 +342,8 @@ input {
 
 .delete_emp_button {
   padding: 10px;
-  background-color: dodgerblue;
-  border: dodgerblue;
+  background-color: #5e9cc3;
+  border: none;
   font-size: large;
   width: 15ch;
   -webkit-box-shadow: 0px 6px 25px 2px rgba(0, 0, 0, 0.31);
@@ -350,11 +354,11 @@ input {
 }
 
 .delete_emp_button:hover {
-  background-color: rgb(123, 189, 255);
+  background-color: #31708e;
 }
 
 .remove_emp_form {
-  background-color: #42bdff;
+  background-color: #f7f9fb;
   transform: translate(-50%, 5%);
   left: 50%;
   position: absolute;
