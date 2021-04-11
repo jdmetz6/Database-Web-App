@@ -291,6 +291,13 @@ button.list_button:hover {
   animation: myAnim 300ms ease 0s 1 normal forwards;
 }
 
+.add_employee_form_title {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
 ::-webkit-input-placeholder {
   text-align: center;
 }
@@ -378,6 +385,13 @@ input {
   100% {
     opacity: 1;
   }
+}
+
+.delete_employee_form_title {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .submit_delete_emp_button {
