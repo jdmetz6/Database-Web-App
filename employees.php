@@ -24,6 +24,10 @@
 <?php
 // Creating sql query.
 $conn = db_connect($_SESSION['validation']);
+
+new_emp_form($conn);
+delete_emp_form($conn);
+
 $sql = 'select * 
         from employee;';
 $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
@@ -43,8 +47,6 @@ $field_names = [
     'Patients'
 ];
 
-new_emp_form($conn);
-delete_emp_form($conn);
 print_results($field_names, $result, $conn);
 ?>
 <?php include 'footer.php'; ?>
