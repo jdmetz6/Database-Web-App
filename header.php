@@ -1,12 +1,15 @@
-<?php session_start();
+<?php
+session_start();
 include 'functions.php';
 logout_button();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <title id="title">Hospital</title>
+    <!-- Function to change browser tab title for each page. -->
     <script>
         function title() {
             document.getElementById("title").innerHTML = document.getElementById("tab_title").innerText;
@@ -17,6 +20,7 @@ logout_button();
 </head>
 
 <body>
+    <!-- Menu bar for top of page. -->
     <div class="menuBar">
         <div class="logo_box">
             <a href="employees.php"><img class="logo" src="images/logo.jpg" alt="heart"></a>
