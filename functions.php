@@ -13,21 +13,21 @@ function logout_button()
 function db_connect($validation)
 {
     $db_host_name = "localhost";
-    $db_username = "username";
-    $db_user_password = "password";
-    $db_name = "dbname";
+    $db_username = "root";
+    $db_user_password = "1121";
+    $db_name = "dbapp";
 
     if ($validation == FALSE || empty($validation)) {
         header("Location: index.php");
         return 0;
     } else {
-        $connection = new mysqli($db_host_name, $db_username, $db_user_password, $db_name);
+        $conn = new mysqli($db_host_name, $db_username, $db_user_password, $db_name);
     }
     // Check database connection.
-    if ($connection->connect_error) {
-        die("Failed: " . $connection->connect_error);
+    if ($conn->connect_error) {
+        die("Failed: " . $conn->connect_error);
     }
-    return $connection;
+    return $conn;
 }
 
 // Pop up form for adding an employee in the employee page
@@ -35,21 +35,21 @@ function new_emp_form($connec)
 {
     if (isset($_POST['new_emp_button'])) {
         echo  '<form class="new_emp_form" method="POST">
-                <h3 class="add_employee_form_title">Add New Employee</h3>
+                <h2 class="add_employee_form_title">Add New Employee</h2>
                 <div class="container1">
-                    <div class="container2">
-                        <input type="text" placeholder="Enter ID Number" name="id" value="" require>
-                        <input type="text" placeholder="Enter First Name" name="fname" value="" require>
-                        <input type="text" placeholder="Enter Last Name" name="lname" value="" require>
-                        <input type="text" placeholder="Enter Birthday" name="bday" value="" require>
-                        <input type="text" placeholder="Enter Gender" name="sex" value="" require>
+                    <div class="container_left">
+                        <input class="new_employee_input" type="text" placeholder="ID Number" name="id" value="" require>
+                        <input class="new_employee_input" type="text" placeholder="First Name" name="fname" value="" require>
+                        <input class="new_employee_input" type="text" placeholder="Last Name" name="lname" value="" require>
+                        <input class="new_employee_input" type="text" placeholder="Birthday" name="bday" value="" require>
+                        <input class="new_employee_input" type="text" placeholder="Gender" name="sex" value="" require>
                     </div>
-                    <div class="container2">    
-                        <input type="text" placeholder="Enter Address" name="address" value="" require>
-                        <input type="text" placeholder="Enter Phone Number" name="phone" value="" require>
-                        <input type="text" placeholder="Enter Job Title" name="title" value="" require>
-                        <input type="text" placeholder="Enter Salary" name="salary" value="" require>
-                        <input type="text" placeholder="Enter Hire Date" name="hiredate" value="" require>
+                    <div class="container_right">    
+                        <input class="new_employee_input" type="text" placeholder="Address" name="address" value="" require>
+                        <input class="new_employee_input" type="text" placeholder="Phone Number" name="phone" value="" require>
+                        <input class="new_employee_input" type="text" placeholder="Job Title" name="title" value="" require>
+                        <input class="new_employee_input" type="text" placeholder="Salary" name="salary" value="" require>
+                        <input class="new_employee_input" type="text" placeholder="Hire Date" name="hiredate" value="" require>
                     </div>  
                 </div>
                 <div class="form_buttons">
@@ -89,11 +89,9 @@ function delete_emp_form($connec)
 {
     if (isset($_POST['delete_emp_button'])) {
         echo  '<form class="remove_emp_form" method="POST">
-                    <h3 class="delete_employee_form_title">Delete Employee</h3>
+                    <h2 class="delete_employee_form_title">Delete Employee</h2>
                     <div class="container1">
-                    <div class="container2">
-                        <input type="text" placeholder="Enter ID Number" name="delete_id" value="" require>
-                    </div>
+                        <input class="delete_employee_input" type="text" placeholder="Enter ID Number" name="delete_id" value="" require>
                     </div>
                     <div class="form_buttons">
                         <button class="submit_delete_emp_button" type="submit" action="employees.php" name="remove_emp_submit">Submit</button>
@@ -137,7 +135,7 @@ function print_results($field_names, $result, $conn)
     if ("prescriptions.php" == basename($_SERVER['PHP_SELF'])) {
         $index = 1;
     }
-    
+
     while ($row = mysqli_fetch_array($result)) {
         $id = $row[0];
         echo "<tr class=row>";
