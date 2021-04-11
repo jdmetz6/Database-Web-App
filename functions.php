@@ -13,9 +13,9 @@ function logout_button()
 function db_connect($validation)
 {
     $db_host_name = "localhost";
-    $db_username = "root";
-    $db_user_password = "1121";
-    $db_name = "dbapp";
+    $db_username = "username";
+    $db_user_password = "password";
+    $db_name = "dbname";
 
     if ($validation == FALSE || empty($validation)) {
         header("Location: index.php");
