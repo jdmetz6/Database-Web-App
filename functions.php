@@ -1,4 +1,5 @@
 <?php
+// Function for logout button in the top menu bar 
 function logout_button()
 {
     if (isset($_POST['logout'])) {
@@ -8,12 +9,13 @@ function logout_button()
     }
 }
 
+// Connect to the database. Change credentials to fit your environment.
 function db_connect($validation)
 {
     $db_host_name = "localhost";
-    $db_username = "root";
-    $db_user_password = "1121";
-    $db_name = "dbapp";
+    $db_username = "username";
+    $db_user_password = "password";
+    $db_name = "dbname";
 
     if ($validation == FALSE || empty($validation)) {
         header("Location: index.php");
@@ -21,13 +23,14 @@ function db_connect($validation)
     } else {
         $connection = new mysqli($db_host_name, $db_username, $db_user_password, $db_name);
     }
-    // Check connection
+    // Check database connection.
     if ($connection->connect_error) {
         die("Failed: " . $connection->connect_error);
     }
     return $connection;
 }
 
+// Pop up form for adding an employee in the employee page
 function new_emp_form($connec)
 {
     if (isset($_POST['new_emp_button'])) {
@@ -68,6 +71,7 @@ function new_emp_form($connec)
         $salary = $_POST['salary'];
         $hiredate = $_POST['hiredate'];
 
+        // Creating sql query to insert new employee information.
         $sql = $connec->prepare("INSERT INTO employee (empid, fname, lname, birthday, gender, address, phone, job_title, salary, hire_date) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )");
         $sql->bind_param("isssssssss", $id, $fname, $lname, $bday, $sex, $address, $phone, $title, $salary, $hiredate);
         $sql->execute();
@@ -80,10 +84,10 @@ function new_emp_form($connec)
     }
 }
 
+// Pop up form for deleting an employee in the employee page.
 function delete_emp_form($connec)
 {
     if (isset($_POST['delete_emp_button'])) {
-
         echo  '<form class="remove_emp_form" method="POST">
                     <h3 class="delete_employee_form_title">Delete Employee</h3>
                     <div class="container1">
@@ -99,6 +103,7 @@ function delete_emp_form($connec)
     }
 
     if (isset($_POST['remove_emp_submit'])) {
+        // Creating sql query to delete employee.
         $id = $_POST['delete_id'];
         $sql = $connec->prepare("DELETE FROM employee WHERE empid=?;");
         $sql->bind_param("i", $id);
@@ -112,29 +117,36 @@ function delete_emp_form($connec)
     }
 }
 
+// Print sql query results in a table.
 function print_results($field_names, $result, $conn)
 {
     echo '<div class="tabl_box">';
     echo '<table class=tabl>';
     echo '<tr class=column>';
+
     // Print Column Names
     foreach ($field_names as $value) {
         echo '<td>' . $value . '</td>';
     }
     echo '</tr>';
+
     // Print Data
     $fieldNum = mysqli_num_fields($result);
     $index = 0;
+
     if ("prescriptions.php" == basename($_SERVER['PHP_SELF'])) {
         $index = 1;
     }
+    
     while ($row = mysqli_fetch_array($result)) {
         $id = $row[0];
         echo "<tr class=row>";
+
         for ($x = $index; $x < $fieldNum; $x++) {
             echo "<td>" . $row[$x] . "</td>";
         }
 
+        // if statements below to print buttons when sql query is made on pages specified in "action =" area of form tags. 
         if ("employees.php" == basename($_SERVER['PHP_SELF'])) {
             echo '<td><form class="assign" method="post" action="doctor_patient_assignment.php">';
             echo '<button class="list_button" type="submit" value="' . $id . '" name="empid">List</button>';
@@ -146,11 +158,14 @@ function print_results($field_names, $result, $conn)
             echo '<button class="list_button" type="submit" value="' . $id . '" name="pid">List</button>';
             echo '</form></td>';
         }
+
         echo "</br>";
         echo "</tr>";
     }
+
     echo '</table>';
     echo '</div>';
+
     $result->free_result();
     $conn->close();
 }
