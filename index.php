@@ -11,8 +11,8 @@
 <body>
     <?php
     include 'functions.php';
-    $login_username = "username";
-    $login_password = "password";
+    $login_username = "root";
+    $login_password = "1121";
     $validation = FALSE;
     ?>
     <h2 class="login_page_title">Hospital Database Login</h2>
