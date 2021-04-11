@@ -12,7 +12,7 @@ $db_name = "dbname";
 
 
 
-////Change app login password in index.php////
+////Change app login username and password in index.php////
 
 $login_username = "username";
 
