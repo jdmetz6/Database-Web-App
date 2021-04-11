@@ -13,21 +13,19 @@
     <?php
     //Change login credentials below to fit your environment.
     include 'functions.php';
-    $login_username = "username";
-    $login_password = "password";
+    $login_username = "root";
+    $login_password = "1121";
     $validation = FALSE;
     ?>
 
-    <h2 class="login_page_title">Hospital Database Login</h2>
     <form class="logform" method="POST">
         <div class="login_container">
-            <label for="user"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="username" require>
-            <label for="pass"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="user_password" require>
+            <h2 class="login_page_title">Hospital Database Sign in</h2>
+            <input class="login_input" type="text" placeholder="Username" name="username" require>
+            <input class="login_input" type="password" placeholder="Password" name="user_password" require>
         </div>
         <div class="form_buttons">
-            <button class="login_button" type="submit">Submit</button>
+            <button class="login_button" type="submit">Sign in</button>
         </div>
     </form>
 
