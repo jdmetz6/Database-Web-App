@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <title>Hospital Login</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="images/logo.jpg" type="image/jpg" sizes="16x16">
 </head>
 
 <body>
@@ -13,8 +14,8 @@
     <?php
     //Change login credentials below to fit your environment.
     include 'functions.php';
-    $login_username = "username";
-    $login_password = "password";
+    $login_username = "root";
+    $login_password = "1121";
     $validation = FALSE;
     ?>
 
