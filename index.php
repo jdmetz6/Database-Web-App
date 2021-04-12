@@ -14,8 +14,8 @@
     <?php
     //Change login credentials below to fit your environment.
     include 'functions.php';
-    $login_username = "root";
-    $login_password = "1121";
+    $login_username = "username";
+    $login_password = "password";
     $validation = FALSE;
     ?>
 
