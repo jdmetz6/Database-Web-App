@@ -17,6 +17,7 @@ logout_button();
     </script>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="icon" href="images/logo.jpg" type="image/jpg" sizes="16x16">
 </head>
 
 <body>
