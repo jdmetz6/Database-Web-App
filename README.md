@@ -1,6 +1,7 @@
-App description: https://github.com/jdmetz6/Database-Web-App/wiki
+# App description: 
+https://github.com/jdmetz6/Database-Web-App/wiki
 
-////To connect to the database, change credentials to fit your environment. Variables are located in functions.php////
+# To connect to the database, change credentials to fit your environment. Variables are located in functions.php
 
 $db_host_name = "localhost";
 
@@ -14,7 +15,7 @@ $db_name = "dbname";
 
 
 
-////Change app login username and password in index.php////
+# Change app login username and password in index.php
 
 $login_username = "username";
 
