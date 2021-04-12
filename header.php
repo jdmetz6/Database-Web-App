@@ -33,9 +33,13 @@ logout_button();
             <button class="tablinks" onclick="window.location.href='occupied_rooms.php';">Rooms</button>
             <button class="tablinks" onclick="window.location.href='medication.php';">Medication</button>
         </div>
-        <p class="login_as">Signed in as: <?php echo '       ';
-                                            print($_SESSION['username']); ?></p>
-        <a class="help" href="https://github.com/jdmetz6/Database-Web-App/wiki" target="_blank"> Help</a>
+        <div class="login_as">
+            <p>Signed in as: <?php echo '       ';
+                                print($_SESSION['username']); ?></p>
+        </div>
+        <div class="help">
+            <a class="help_link" href="https://github.com/jdmetz6/Database-Web-App/wiki" target="_blank"> Help</a>
+        </div>
         <form method="POST">
             <button class="log_out_button" type="submit" name="logout">Sign out</button>
         </form>
