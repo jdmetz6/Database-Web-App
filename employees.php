@@ -34,7 +34,7 @@ $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
 // Creating column names for sql query results.
 $field_names = [
-    'ID',
+    'Employee ID',
     'First Name',
     'Last Name',
     'Birthday',
